@@ -1,7 +1,8 @@
 name: objectbox_inspector
-description: "A new Flutter package project."
+description: "A visual interface for all the classes annotated with @Entity in ObjectBox."
 version: 0.0.1
-homepage:
+publish_to: 
+homepage: https://github.com/ccosnean/objectbox-inspector/tree/main/objectbox_inspector
 
 environment:
   sdk: ^3.5.4
