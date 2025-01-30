@@ -1,0 +1,29 @@
+targets:
+  $default:
+    builders:
+      objectbox_inspector_generator|parser:
+        enabled: true
+        generate_for:
+          - lib/**.dart
+      objectbox_inspector_generator|merger:
+        enabled: true
+        generate_for:
+          - lib/pubspec.yaml
+
+builders:
+  parser:
+    import: "package:objectbox_inspector_generator/objectbox_inspector_generator.dart"
+    builder_factories: ["parseEntitiesAndGenerateItsCode"]
+    build_extensions:
+      ".dart": ["tmp.g.dart"]
+    auto_apply: dependents
+    build_to: source
+  merger:
+    import: "package:objectbox_inspector_generator/objectbox_inspector_generator.dart"
+    builder_factories: ["mergeCodeAndProduceOutput"]
+    build_extensions:
+      "pubspec.yaml": ["lib/objectbox.inspector.g.dart"]
+    auto_apply: dependents
+    build_to: source
+    applies_builders: ["objectbox_inspector_generator|parser"]
+
