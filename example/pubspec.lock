@@ -411,16 +411,18 @@ packages:
   objectbox_inspector:
     dependency: "direct main"
     description:
-      path: "../objectbox_inspector"
-      relative: true
-    source: path
+      name: objectbox_inspector
+      sha256: "905ee5ce95aa89883452a426ef5561fe80c2b4a306fb7591ebcd6cb41a95d216"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.5"
   objectbox_inspector_generator:
     dependency: "direct dev"
     description:
-      path: "../objectbox_inspector_generator"
-      relative: true
-    source: path
+      name: objectbox_inspector_generator
+      sha256: f1ad1b227ced6e202f60d1362ae2209bd69e60eeed5d66a889dd5217f7f587bd
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.5"
   package_config:
     dependency: transitive

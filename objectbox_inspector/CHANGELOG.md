@@ -1,3 +1,12 @@
+## 0.0.6
+
+* updates the generator flutter version to 1.17.0
+* provides some documentation
+
+## 0.0.5
+
+* minor fixes
+
 ## 0.0.4
 
 * fixes dependency issues (adds the same version of objectbox)

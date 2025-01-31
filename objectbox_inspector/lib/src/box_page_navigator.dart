@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:objectbox_inspector/objectbox_inspector.dart';
 import 'package:objectbox_inspector/src/box_page.dart';
 
+/// A utility class that handles navigation to [BoxPage]s and manages the available boxes.
+///
+/// The [BoxPageNavigator] maintains a map of box names to [InspectableBox] objects
+/// and provides methods to set up the boxes and navigate to specific box pages.
 class BoxPageNavigator {
   static Map<String, InspectableBox> _boxes = {};
 

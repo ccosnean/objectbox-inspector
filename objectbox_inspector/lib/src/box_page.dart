@@ -2,6 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:objectbox_inspector/objectbox_inspector.dart';
 import 'package:objectbox_inspector/src/tiles/entity_list_tile.dart';
 
+/// A page that displays the entities within a specific ObjectBox box.
+///
+/// The [BoxPage] takes an [InspectableBox] and displays its entities in a list.
+/// Each entity is shown as a list tile that can be expanded to view its properties.
+///
+/// The [selectedIds] parameter can be used to highlight specific entities and
+/// automatically scroll to the first selected entity when the page loads.
+///
+/// Example usage:
+/// ```dart
+/// BoxPage(
+///   box: myInspectableBox,
+///   selectedIds: [1, 2, 3],
+/// )
+/// ```
 class BoxPage extends StatefulWidget {
   final InspectableBox box;
   final List<int> selectedIds;
