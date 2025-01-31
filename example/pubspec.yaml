@@ -5,7 +5,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.5.4
+  sdk: ^3.3.4
 
 dependencies:
   flutter:
@@ -14,19 +14,19 @@ dependencies:
   path_provider: ^2.1.2
   path: ^1.8.3
   objectbox_flutter_libs:
-  # objectbox_inspector: #^0.0.5
-  #   path: ../objectbox_inspector/
-  objectbox_inspector: ^0.0.5
+  objectbox_inspector:
+    path: ../objectbox_inspector/
+  # objectbox_inspector: ^0.0.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
-  build_runner: ^2.4.13
+  build_runner: ^2.4.9
   objectbox_generator: any
-  objectbox_inspector_generator: ^0.0.5
-  # objectbox_inspector_generator: #^0.0.5
-  #   path: ../objectbox_inspector_generator/
+  # objectbox_inspector_generator: ^0.0.6
+  objectbox_inspector_generator:
+    path: ../objectbox_inspector_generator/
 
 flutter:
   uses-material-design: true

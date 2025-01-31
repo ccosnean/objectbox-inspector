@@ -71,7 +71,7 @@ class EntityParser extends Builder {
         continue;
       }
 
-      final type = field.type.getDisplayString();
+      final type = field.type.getDisplayString(withNullability: true);
       if (type.contains('ToOne')) {
         final runtimeType = type.replaceAll("ToOne<", "").replaceAll(">", "");
         buffer.writeln('''

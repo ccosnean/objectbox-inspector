@@ -1,3 +1,7 @@
+## 0.0.7
+
+* fixes generator for older versions of the SDK
+
 ## 0.0.6
 
 * updates the generator flutter version to 1.17.0
