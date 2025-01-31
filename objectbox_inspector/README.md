@@ -14,10 +14,10 @@ To use the Objectbox Inspector, you need to add the `objectbox_inspector` and `o
 
 ```yaml
 dependencies:
-  objectbox_inspector: ^0.0.1
+  objectbox_inspector: latest
 
 dev_dependencies:
-  objectbox_inspector_generator: ^0.0.1
+  objectbox_inspector_generator: latest
 ```
 
 After running `flutter pub get`, you can run the `objectbox_inspector` command to generate the inspector.
