@@ -1,10 +1,10 @@
 name: objectbox_inspector_generator
 description: "The generator for objectbox_inspector, getInspectableBoxes mainly, that is required by openObjectboxInspector."
-version: 0.0.1
+version: 0.0.2
 homepage: 
 
 environment:
-  sdk: ^3.5.4
+  sdk: ^3.3.4
   flutter: ">=1.17.0"
 
 dependencies:

@@ -2,18 +2,50 @@
 
 import 'package:objectbox/objectbox.dart';
 import 'package:objectbox_inspector/objectbox_inspector.dart';
+import 'models/user.dart';
 import 'models/category.dart';
 import 'models/post.dart';
 import 'models/comment.dart';
-import 'models/user.dart';
 
 List<InspectableBox> getInspectableBoxes(Store store) {
   return [
+    buildUserInspectableBox(store),
     buildCategoryInspectableBox(store),
     buildPostInspectableBox(store),
     buildCommentInspectableBox(store),
-    buildUserInspectableBox(store),
   ];
+}
+
+InspectableBox buildUserInspectableBox(Store store) {
+  final box = store.box<User>();
+  final allEntities = box.getAll();
+  final entities = allEntities
+      .map(
+        (entity) => InspectableEntity(
+          id: entity.id,
+          properties: [
+            InspectableProperty(
+              name: 'id',
+              value: entity.id,
+            ),
+            InspectableProperty(
+              name: 'email',
+              value: entity.email,
+            ),
+            InspectableProperty(
+              name: 'name',
+              value: entity.name,
+            ),
+          ],
+        ),
+      )
+      .toList();
+
+  return InspectableBox(
+    boxName: 'User',
+    maxEntities: box.count(),
+    entityGetter: () => entities,
+  );
 }
 
 InspectableBox buildCategoryInspectableBox(Store store) {
@@ -135,38 +167,6 @@ InspectableBox buildCommentInspectableBox(Store store) {
 
   return InspectableBox(
     boxName: 'Comment',
-    maxEntities: box.count(),
-    entityGetter: () => entities,
-  );
-}
-
-InspectableBox buildUserInspectableBox(Store store) {
-  final box = store.box<User>();
-  final allEntities = box.getAll();
-  final entities = allEntities
-      .map(
-        (entity) => InspectableEntity(
-          id: entity.id,
-          properties: [
-            InspectableProperty(
-              name: 'id',
-              value: entity.id,
-            ),
-            InspectableProperty(
-              name: 'email',
-              value: entity.email,
-            ),
-            InspectableProperty(
-              name: 'name',
-              value: entity.name,
-            ),
-          ],
-        ),
-      )
-      .toList();
-
-  return InspectableBox(
-    boxName: 'User',
     maxEntities: box.count(),
     entityGetter: () => entities,
   );

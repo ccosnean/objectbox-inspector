@@ -1,11 +1,11 @@
 name: objectbox_inspector
 description: "A visual interface for all the classes annotated with @Entity in ObjectBox."
-version: 0.0.1
+version: 0.0.2
 publish_to: 
 homepage: https://github.com/ccosnean/objectbox-inspector/tree/main/objectbox_inspector
 
 environment:
-  sdk: ^3.5.4
+  sdk: ^3.3.4
   flutter: ">=1.17.0"
 
 dependencies:
