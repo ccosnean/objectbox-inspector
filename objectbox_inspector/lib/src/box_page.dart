@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:objectbox_inspector/src/models/inspectable_box.dart';
+import 'package:objectbox_inspector/objectbox_inspector.dart';
 import 'package:objectbox_inspector/src/tiles/entity_list_tile.dart';
 
-class BoxPage extends StatelessWidget {
+class BoxPage extends StatefulWidget {
   final InspectableBox box;
   final List<int> selectedIds;
   const BoxPage({
@@ -12,30 +12,68 @@ class BoxPage extends StatelessWidget {
   });
 
   @override
+  State<BoxPage> createState() => _BoxPageState();
+}
+
+class _BoxPageState extends State<BoxPage> {
+  final controller = ScrollController();
+
+  List<InspectableEntity> entities = [];
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    entities = widget.box.entityGetter.call();
+    if (widget.selectedIds.isNotEmpty) {
+      final firstSelectedId = widget.selectedIds.first;
+      final selectedIdIndex =
+          entities.indexWhere((e) => e.id == firstSelectedId);
+
+      WidgetsBinding.instance.waitUntilFirstFrameRasterized.then((_) async {
+        final totalHeight = controller.position.maxScrollExtent;
+        final entityHeight = totalHeight / (entities.length - 1);
+        await controller.animateTo(
+          entityHeight * selectedIdIndex,
+          duration: const Duration(milliseconds: 100),
+          curve: Curves.easeInOut,
+        );
+      });
+    }
+
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
-    final entities = box.entityGetter.call();
     final tt = Theme.of(context).textTheme;
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          box.boxName,
+          widget.box.boxName,
           style: tt.titleLarge?.copyWith(
             fontWeight: FontWeight.w500,
           ),
         ),
       ),
       body: ListView.builder(
+        controller: controller,
         padding: EdgeInsets.only(
           bottom: mq.viewPadding.bottom + 20,
         ),
         itemBuilder: (context, index) {
           final entity = entities[index];
+          final isSelected = widget.selectedIds.contains(entity.id);
 
           return EntityListTile(
             entity: entity,
-            isSelected: selectedIds.contains(entity.id),
+            isSelected: isSelected,
           );
         },
         itemCount: entities.length,

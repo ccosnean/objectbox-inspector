@@ -1,6 +1,11 @@
+## 0.0.4
+
+* fixes dependency issues (adds the same version of objectbox)
+* adds automatic scrolling to the selected first entity
+
 ## 0.0.3
 
-updated the README.md
+* updated the README.md
 
 ## 0.0.2
 

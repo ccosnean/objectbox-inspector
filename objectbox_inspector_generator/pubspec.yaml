@@ -1,6 +1,6 @@
 name: objectbox_inspector_generator
 description: "The generator for objectbox_inspector, getInspectableBoxes mainly, that is required by openObjectboxInspector."
-version: 0.0.3
+version: 0.0.4
 homepage: 
 
 environment:
@@ -10,14 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  build: ^2.4.1
-  analyzer: ^6.7.0
+  build: ^2.0.0
+  analyzer: '>=5.2.0 <7.0.0' # 5.1.0 has a bug where DartType.element has been removed.
   objectbox: ^4.0.3
-  source_gen: ^1.5.0
-  dart_style: ^2.3.7
+  source_gen: ^1.0.0
+  dart_style: ^2.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
-  build_runner: ^2.4.13
+  flutter_lints: ">=3.0.0 <4.0.0"
