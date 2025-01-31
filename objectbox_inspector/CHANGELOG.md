@@ -1,6 +1,10 @@
 ## 0.0.7
 
-* fixes generator for older versions of the SDK
+* Fixes generator for older versions of the SDK
+* Skips part files in generator to avoid falar errors.
+* Fixes ToMany relation preview
+* Updates the README.md
+* Changes the UI of the entity list tile and makes it expandable
 
 ## 0.0.6
 

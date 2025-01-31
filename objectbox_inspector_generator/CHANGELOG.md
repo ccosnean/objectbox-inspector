@@ -1,6 +1,8 @@
 ## 0.0.7
 
-* fixes generator for older versions of the SDK
+* Fixes generator for older versions of the SDK
+* Skips part files in generator to avoid falar errors.
+* Fixes ToMany relation preview
 
 ## 0.0.6
 

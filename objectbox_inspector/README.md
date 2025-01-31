@@ -45,4 +45,24 @@ IconButton(
 // ...
 ```
 
+## Advanced relations preview
+
+There might be a case where instead of the preview of the relation, you want to see the actual data.
+
+Now for a `ToOne` relation you would get a default preview.
+
+- `ToOne<User>(id: 1)`
+
+To override this you can override the `@Entity`'s class `toString` method.
+
+```dart
+@Entity()
+class User {
+  @override
+  String toString() => "User(id: $id)";
+}
+```
+
+> Note: you cannot override the `ToMany` relation preview (for now).
+
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/cosneanuc2)

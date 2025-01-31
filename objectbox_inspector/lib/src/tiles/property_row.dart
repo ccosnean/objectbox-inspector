@@ -13,24 +13,32 @@ class PropertyRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final tt = Theme.of(context).textTheme;
 
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Text(
-          "${property.name}:",
-          style: tt.titleMedium,
-        ),
-        const SizedBox(width: 12),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 1),
-            child: PropertyValue(
-              property: property,
-            ),
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 4),
+      decoration: BoxDecoration(
+        color: Colors.black.withOpacity(0.05),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      padding: const EdgeInsets.only(
+        left: 14,
+        top: 10,
+        bottom: 10,
+        right: 14,
+      ),
+      clipBehavior: Clip.hardEdge,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            property.name,
+            style: tt.bodyLarge,
           ),
-        ),
-      ],
+          PropertyValue(
+            property: property,
+          ),
+        ],
+      ),
     );
   }
 }

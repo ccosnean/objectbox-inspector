@@ -33,13 +33,14 @@ class PropertyValue extends StatelessWidget {
           BoxPageNavigator.push(
             context,
             property.toManyRelation!.targetBoxName,
-            property.toManyRelation!.rel
-                .toList()
-                .map((e) => e.id as int)
-                .toList(),
+            property.toManyRelation!.ids,
           );
         },
       );
+    }
+
+    if (property.value is bool) {
+      return BoolPropertyValue(value: property.value as bool);
     }
 
     if (property.value is int) {
@@ -60,7 +61,7 @@ class PropertyValue extends StatelessWidget {
 
     return Text(
       property.value.toString(),
-      style: tt.bodyMedium,
+      style: tt.bodyLarge,
     );
   }
 }
@@ -76,6 +77,26 @@ class NullPropertyValue extends StatelessWidget {
       style: tt.bodyLarge?.copyWith(
         fontWeight: FontWeight.w500,
         color: Colors.redAccent,
+      ),
+    );
+  }
+}
+
+class BoolPropertyValue extends StatelessWidget {
+  final bool value;
+  const BoolPropertyValue({
+    super.key,
+    required this.value,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final tt = Theme.of(context).textTheme;
+    return Text(
+      value.toString(),
+      style: tt.bodyLarge?.copyWith(
+        color: value ? Colors.blue : Colors.red,
+        fontWeight: FontWeight.w500,
       ),
     );
   }

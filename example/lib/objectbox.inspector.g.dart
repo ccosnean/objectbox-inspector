@@ -2,22 +2,22 @@
 
 import 'package:objectbox/objectbox.dart';
 import 'package:objectbox_inspector/objectbox_inspector.dart';
-import 'models/comment.dart';
-import 'models/post.dart';
 import 'models/user.dart';
+import 'models/post.dart';
+import 'models/comment.dart';
 import 'models/category.dart';
 
 List<InspectableBox> getInspectableBoxes(Store store) {
   return [
-    buildCommentInspectableBox(store),
-    buildPostInspectableBox(store),
     buildUserInspectableBox(store),
+    buildPostInspectableBox(store),
+    buildCommentInspectableBox(store),
     buildCategoryInspectableBox(store),
   ];
 }
 
-InspectableBox buildCommentInspectableBox(Store store) {
-  final box = store.box<Comment>();
+InspectableBox buildUserInspectableBox(Store store) {
+  final box = store.box<User>();
   final allEntities = box.getAll();
   final entities = allEntities
       .map(
@@ -29,20 +29,12 @@ InspectableBox buildCommentInspectableBox(Store store) {
               value: entity.id,
             ),
             InspectableProperty(
-              name: 'content',
-              value: entity.content,
+              name: 'email',
+              value: entity.email,
             ),
             InspectableProperty(
-              name: 'createdAt',
-              value: entity.createdAt,
-            ),
-            InspectableProperty(
-              name: 'author',
-              toOneRelation: ToOneRelation<User>(rel: entity.author),
-            ),
-            InspectableProperty(
-              name: 'post',
-              toOneRelation: ToOneRelation<Post>(rel: entity.post),
+              name: 'name',
+              value: entity.name,
             ),
           ],
         ),
@@ -50,7 +42,7 @@ InspectableBox buildCommentInspectableBox(Store store) {
       .toList();
 
   return InspectableBox(
-    boxName: 'Comment',
+    boxName: 'User',
     maxEntities: box.count(),
     entityGetter: () => entities,
   );
@@ -90,7 +82,10 @@ InspectableBox buildPostInspectableBox(Store store) {
             ),
             InspectableProperty(
               name: 'comments',
-              toManyRelation: ToManyRelation<Comment>(rel: entity.comments),
+              toManyRelation: ToManyRelation<Comment>(
+                rel: entity.comments,
+                ids: entity.comments.map((e) => e.id).toList(),
+              ),
             ),
           ],
         ),
@@ -104,8 +99,8 @@ InspectableBox buildPostInspectableBox(Store store) {
   );
 }
 
-InspectableBox buildUserInspectableBox(Store store) {
-  final box = store.box<User>();
+InspectableBox buildCommentInspectableBox(Store store) {
+  final box = store.box<Comment>();
   final allEntities = box.getAll();
   final entities = allEntities
       .map(
@@ -117,12 +112,20 @@ InspectableBox buildUserInspectableBox(Store store) {
               value: entity.id,
             ),
             InspectableProperty(
-              name: 'email',
-              value: entity.email,
+              name: 'content',
+              value: entity.content,
             ),
             InspectableProperty(
-              name: 'name',
-              value: entity.name,
+              name: 'createdAt',
+              value: entity.createdAt,
+            ),
+            InspectableProperty(
+              name: 'author',
+              toOneRelation: ToOneRelation<User>(rel: entity.author),
+            ),
+            InspectableProperty(
+              name: 'post',
+              toOneRelation: ToOneRelation<Post>(rel: entity.post),
             ),
           ],
         ),
@@ -130,7 +133,7 @@ InspectableBox buildUserInspectableBox(Store store) {
       .toList();
 
   return InspectableBox(
-    boxName: 'User',
+    boxName: 'Comment',
     maxEntities: box.count(),
     entityGetter: () => entities,
   );

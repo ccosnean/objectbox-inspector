@@ -16,7 +16,13 @@ class EntityParser extends Builder {
 
   @override
   FutureOr<void> build(BuildStep buildStep) async {
-    final libReader = LibraryReader(await buildStep.inputLibrary);
+    LibraryReader libReader;
+    try {
+      libReader = LibraryReader(await buildStep.inputLibrary);
+    } catch (e) {
+      log.info(" Skipping part file.");
+      return;
+    }
     final annotatedElements = libReader.annotatedWith(_entityChecker);
 
     for (final annotation in annotatedElements) {
@@ -66,7 +72,7 @@ class EntityParser extends Builder {
     for (final field in fields) {
       if (_transientChecker.annotationsOfExact(field.nonSynthetic).isNotEmpty) {
         log.info(
-          "  Skipping property '${field.name}': annotated with @Transient.",
+          " Skipping property '${field.name}': annotated with @Transient.",
         );
         continue;
       }
@@ -85,7 +91,10 @@ class EntityParser extends Builder {
         buffer.writeln('''
           InspectableProperty(
             name: '${field.name}',
-            toManyRelation: ToManyRelation<$runtimeType>(rel: entity.${field.name}),
+            toManyRelation: ToManyRelation<$runtimeType>(
+              rel: entity.${field.name},
+              ids: entity.${field.name}.map((e) => e.$idName).toList(),
+            ),
           ),
         ''');
       } else {

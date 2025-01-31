@@ -66,7 +66,7 @@ class ToOneRelation<T> {
     final preview = rel.target.toString();
 
     if (preview.contains("Instance of")) {
-      return "ToOne(id: ${rel.targetId})";
+      return "ToOne<$targetBoxName>(id: ${rel.targetId})";
     }
 
     return preview;
@@ -93,14 +93,16 @@ class ToOneRelation<T> {
 /// package and used by the ObjectBox Inspector UI to display ToMany relation details.
 class ToManyRelation<T> {
   final ToMany<T> rel;
+  final List<int> ids;
 
   String get previewString {
-    return "ToMany(count: ${rel.length})";
+    return "ToMany<$targetBoxName>(${ids.length})";
   }
 
   String get targetBoxName => T.toString();
 
   ToManyRelation({
     required this.rel,
+    required this.ids,
   });
 }
