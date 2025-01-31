@@ -1,3 +1,7 @@
+## 0.0.8
+
+* Updates demo picture to fit new ui.
+
 ## 0.0.7
 
 * Fixes generator for older versions of the SDK
