@@ -1,6 +1,5 @@
 import 'package:example/models/comment.dart';
 import 'package:example/objectbox.g.dart';
-import 'package:objectbox/objectbox.dart';
 
 class CommentRepository {
   final Store _store;

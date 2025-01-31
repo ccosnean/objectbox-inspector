@@ -8,7 +8,7 @@ This package provides a visual interface for all the classes annotated with `@En
 
 ## Usage
 
-To use the Objectbox Inspector, you need to add the `objectbox_inspector` and `objectbox_inspector_generator` dependency to your project.
+To use the Objectbox Inspector, you need to add the `objectbox_inspector` and [objectbox_inspector_generator](https://pub.dev/packages/objectbox_inspector_generator) dependency to your project.
 
 > Note: Obviosly `objectbox` itself is required.
 
