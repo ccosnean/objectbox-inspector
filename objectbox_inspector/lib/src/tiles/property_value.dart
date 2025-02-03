@@ -47,6 +47,10 @@ class PropertyValue extends StatelessWidget {
       return IntPropertyValue(value: property.value as int);
     }
 
+    if (property.value is double) {
+      return DoublePropertyValue(value: property.value as double);
+    }
+
     if (property.value is String) {
       return StringPropertyValue(value: property.value as String);
     }
@@ -55,6 +59,9 @@ class PropertyValue extends StatelessWidget {
       return DatePropertyValue(value: property.value as DateTime);
     }
 
+    if (property.value is List) {
+      return ListPropertyValue(value: property.value as List);
+    }
     if (property.value == null) {
       return const NullPropertyValue();
     }
@@ -140,6 +147,25 @@ class IntPropertyValue extends StatelessWidget {
   }
 }
 
+class DoublePropertyValue extends StatelessWidget {
+  final double value;
+  const DoublePropertyValue({
+    super.key,
+    required this.value,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final tt = Theme.of(context).textTheme;
+    return Text(
+      value.toString(),
+      style: tt.titleMedium?.copyWith(
+        color: Colors.blue,
+      ),
+    );
+  }
+}
+
 class DatePropertyValue extends StatelessWidget {
   final DateTime value;
   const DatePropertyValue({
@@ -157,6 +183,59 @@ class DatePropertyValue extends StatelessWidget {
         fontWeight: FontWeight.w500,
         color: Colors.purple,
       ),
+    );
+  }
+}
+
+class ListPropertyValue extends StatelessWidget {
+  final List<dynamic> value;
+  const ListPropertyValue({
+    super.key,
+    required this.value,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final tt = Theme.of(context).textTheme;
+    final cs = Theme.of(context).colorScheme;
+    final isString = value.any((e) => e is String);
+    final bg = isString ? Colors.green : Colors.blue;
+
+    if (value.isEmpty) {
+      return Text(
+        '[]',
+        style: tt.bodyLarge?.copyWith(
+          color: cs.onSurface.withOpacity(0.5),
+        ),
+      );
+    }
+
+    return Wrap(
+      spacing: 4,
+      runSpacing: 4,
+      children: value
+          .map(
+            (e) => Container(
+              padding: EdgeInsets.only(
+                left: isString ? 6 : 8,
+                right: isString ? 6 : 8,
+                top: 2,
+                bottom: 2,
+              ),
+              decoration: BoxDecoration(
+                color: cs.onSurface.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: Text(
+                "${isString ? '"' : ''}${e.toString()}${isString ? '"' : ''}",
+                style: tt.bodyLarge?.copyWith(
+                  color: bg,
+                  fontWeight: isString ? FontWeight.normal : FontWeight.w500,
+                ),
+              ),
+            ),
+          )
+          .toList(),
     );
   }
 }

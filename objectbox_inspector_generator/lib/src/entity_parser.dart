@@ -99,11 +99,19 @@ class EntityParser extends Builder {
         ''');
       } else {
         buffer.writeln('''
-        InspectableProperty(
+        InspectableProperty<$type>(
           name: '${field.name}',
           value: entity.${field.name},
-        ),
       ''');
+        if (field.name != idName && !field.isFinal) {
+          buffer.writeln('''
+        onChanged: (value) {
+          entity.${field.name} = value;
+          box.put(entity);
+        },
+      ''');
+        }
+        buffer.writeln('),');
       }
     }
 

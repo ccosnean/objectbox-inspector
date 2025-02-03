@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:example/models/user.dart';
 import 'package:example/models/post.dart';
 import 'package:example/models/comment.dart';
@@ -6,11 +8,12 @@ import 'package:example/repos/repos.dart';
 
 class DatabaseSeeder {
   static Future<void> seed() async {
+    // Repos.instance.users.deleteAll();
+    // Repos.instance.posts.deleteAll();
+    // Repos.instance.comments.deleteAll();
+    // Repos.instance.categories.deleteAll();
+    // return;
     if (Repos.instance.users.getAll().isNotEmpty) {
-      // Repos.instance.users.deleteAll();
-      // Repos.instance.posts.deleteAll();
-      // Repos.instance.comments.deleteAll();
-      // Repos.instance.categories.deleteAll();
       return;
     }
 
@@ -21,11 +24,28 @@ class DatabaseSeeder {
   }
 
   static Future<void> _seedCategories() async {
-    for (int index = 0; index < 10000; index++) {
+    Repos.instance.categories.create(
+      Category(
+        name: 'Category 1',
+        int8ListProperty: Int8List.fromList([1, 2, 3]),
+        uint8ListProperty: Uint8List.fromList([1, 2, 3]),
+        int16ListProperty: Int16List.fromList([1, 2, 3]),
+        uint16ListProperty: Uint16List.fromList([1, 2, 3]),
+        int32ListProperty: Int32List.fromList([1, 2, 3]),
+        uint32ListProperty: Uint32List.fromList([1, 2, 3]),
+        int64ListProperty: Int64List.fromList([1, 2, 3]),
+      ),
+    );
+    for (int index = 1; index < 100; index++) {
       final category = Category(
         name: 'Category $index',
         description: 'Description $index',
         iconName: 'icon_$index',
+        amountOfItems: index,
+        nonEditableProperty: index * 100,
+        stringListProperty: List.generate(5, (i) => 'string$i'),
+        intListProperty: List.generate(5, (i) => i),
+        doubleListProperty: List.generate(5, (i) => i.toDouble()),
       );
 
       Repos.instance.categories.create(category);

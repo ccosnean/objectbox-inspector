@@ -25,15 +25,14 @@ final _entities = <obx_int.ModelEntity>[
   obx_int.ModelEntity(
       id: const obx_int.IdUid(1, 9204389335100116947),
       name: 'Category',
-      lastPropertyId: const obx_int.IdUid(8, 588666454146585678),
+      lastPropertyId: const obx_int.IdUid(28, 1999651318095953159),
       flags: 0,
       properties: <obx_int.ModelProperty>[
         obx_int.ModelProperty(
             id: const obx_int.IdUid(2, 6607034592255374534),
             name: 'name',
             type: 9,
-            flags: 2080,
-            indexId: const obx_int.IdUid(1, 2065247353024696940)),
+            flags: 0),
         obx_int.ModelProperty(
             id: const obx_int.IdUid(3, 4829630488897594594),
             name: 'description',
@@ -48,7 +47,107 @@ final _entities = <obx_int.ModelEntity>[
             id: const obx_int.IdUid(7, 8889435216445471141),
             name: 'dbId',
             type: 6,
-            flags: 1)
+            flags: 1),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(9, 2062722448128687585),
+            name: 'amountOfItems',
+            type: 6,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(10, 8886756930641882719),
+            name: 'nonEditableProperty',
+            type: 6,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(11, 6091883322936348435),
+            name: 'doubleProperty',
+            type: 8,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(12, 2595818076717668592),
+            name: 'stringListProperty',
+            type: 30,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(13, 4099902734138089878),
+            name: 'intListProperty',
+            type: 27,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(14, 1155316597669794636),
+            name: 'doubleListProperty',
+            type: 29,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(15, 7962992338030769794),
+            name: 'optionalDoubleListProperty',
+            type: 29,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(16, 3588640737214992292),
+            name: 'nullableAmountOfItems',
+            type: 6,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(17, 2576496511610859708),
+            name: 'nullableDoubleProperty',
+            type: 8,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(18, 4445747466688849729),
+            name: 'nullableStringListProperty',
+            type: 30,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(19, 8926273281359589052),
+            name: 'nullableIntListProperty',
+            type: 27,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(20, 7789036155164502016),
+            name: 'int8ListProperty',
+            type: 23,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(21, 475024681007208117),
+            name: 'uint8ListProperty',
+            type: 23,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(22, 4634017462141807647),
+            name: 'int16ListProperty',
+            type: 24,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(23, 875216484215337591),
+            name: 'uint16ListProperty',
+            type: 24,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(24, 5067060722240609469),
+            name: 'int32ListProperty',
+            type: 26,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(25, 7054927296247103900),
+            name: 'uint32ListProperty',
+            type: 26,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(26, 1065894522826240344),
+            name: 'int64ListProperty',
+            type: 27,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(27, 8103229196711961164),
+            name: 'boolProperty',
+            type: 1,
+            flags: 0),
+        obx_int.ModelProperty(
+            id: const obx_int.IdUid(28, 1999651318095953159),
+            name: 'nullableBoolProperty',
+            type: 1,
+            flags: 0)
       ],
       relations: <obx_int.ModelRelation>[],
       backlinks: <obx_int.ModelBacklink>[]),
@@ -201,7 +300,7 @@ obx_int.ModelDefinition getObjectBoxModel() {
       lastRelationId: const obx_int.IdUid(0, 0),
       lastSequenceId: const obx_int.IdUid(0, 0),
       retiredEntityUids: const [],
-      retiredIndexUids: const [],
+      retiredIndexUids: const [2065247353024696940],
       retiredPropertyUids: const [
         850449383254443506,
         7493509711066537935,
@@ -230,11 +329,74 @@ obx_int.ModelDefinition getObjectBoxModel() {
           final iconNameOffset = object.iconName == null
               ? null
               : fbb.writeString(object.iconName!);
-          fbb.startTable(9);
+          final stringListPropertyOffset = fbb.writeList(object
+              .stringListProperty
+              .map(fbb.writeString)
+              .toList(growable: false));
+          final intListPropertyOffset =
+              fbb.writeListInt64(object.intListProperty);
+          final doubleListPropertyOffset =
+              fbb.writeListFloat64(object.doubleListProperty);
+          final optionalDoubleListPropertyOffset =
+              object.optionalDoubleListProperty == null
+                  ? null
+                  : fbb.writeListFloat64(object.optionalDoubleListProperty!);
+          final nullableStringListPropertyOffset =
+              object.nullableStringListProperty == null
+                  ? null
+                  : fbb.writeList(object.nullableStringListProperty!
+                      .map(fbb.writeString)
+                      .toList(growable: false));
+          final nullableIntListPropertyOffset =
+              object.nullableIntListProperty == null
+                  ? null
+                  : fbb.writeListInt64(object.nullableIntListProperty!);
+          final int8ListPropertyOffset = object.int8ListProperty == null
+              ? null
+              : fbb.writeListInt8(object.int8ListProperty!);
+          final uint8ListPropertyOffset = object.uint8ListProperty == null
+              ? null
+              : fbb.writeListInt8(object.uint8ListProperty!);
+          final int16ListPropertyOffset = object.int16ListProperty == null
+              ? null
+              : fbb.writeListInt16(object.int16ListProperty!);
+          final uint16ListPropertyOffset = object.uint16ListProperty == null
+              ? null
+              : fbb.writeListInt16(object.uint16ListProperty!);
+          final int32ListPropertyOffset = object.int32ListProperty == null
+              ? null
+              : fbb.writeListInt32(object.int32ListProperty!);
+          final uint32ListPropertyOffset = object.uint32ListProperty == null
+              ? null
+              : fbb.writeListInt32(object.uint32ListProperty!);
+          final int64ListPropertyOffset = object.int64ListProperty == null
+              ? null
+              : fbb.writeListInt64(object.int64ListProperty!);
+          fbb.startTable(29);
           fbb.addOffset(1, nameOffset);
           fbb.addOffset(2, descriptionOffset);
           fbb.addOffset(3, iconNameOffset);
           fbb.addInt64(6, object.dbId);
+          fbb.addInt64(8, object.amountOfItems);
+          fbb.addInt64(9, object.nonEditableProperty);
+          fbb.addFloat64(10, object.doubleProperty);
+          fbb.addOffset(11, stringListPropertyOffset);
+          fbb.addOffset(12, intListPropertyOffset);
+          fbb.addOffset(13, doubleListPropertyOffset);
+          fbb.addOffset(14, optionalDoubleListPropertyOffset);
+          fbb.addInt64(15, object.nullableAmountOfItems);
+          fbb.addFloat64(16, object.nullableDoubleProperty);
+          fbb.addOffset(17, nullableStringListPropertyOffset);
+          fbb.addOffset(18, nullableIntListPropertyOffset);
+          fbb.addOffset(19, int8ListPropertyOffset);
+          fbb.addOffset(20, uint8ListPropertyOffset);
+          fbb.addOffset(21, int16ListPropertyOffset);
+          fbb.addOffset(22, uint16ListPropertyOffset);
+          fbb.addOffset(23, int32ListPropertyOffset);
+          fbb.addOffset(24, uint32ListPropertyOffset);
+          fbb.addOffset(25, int64ListPropertyOffset);
+          fbb.addBool(26, object.boolProperty);
+          fbb.addBool(27, object.nullableBoolProperty);
           fbb.finish(fbb.endTable());
           return object.dbId;
         },
@@ -248,12 +410,76 @@ obx_int.ModelDefinition getObjectBoxModel() {
                   .vTableGetNullable(buffer, rootOffset, 8);
           final iconNameParam = const fb.StringReader(asciiOptimization: true)
               .vTableGetNullable(buffer, rootOffset, 10);
+          final nonEditablePropertyParam =
+              const fb.Int64Reader().vTableGet(buffer, rootOffset, 22, 0);
+          final amountOfItemsParam =
+              const fb.Int64Reader().vTableGet(buffer, rootOffset, 20, 0);
+          final doublePropertyParam =
+              const fb.Float64Reader().vTableGet(buffer, rootOffset, 24, 0);
+          final stringListPropertyParam = const fb.ListReader<String>(
+                  fb.StringReader(asciiOptimization: true),
+                  lazy: false)
+              .vTableGet(buffer, rootOffset, 26, []);
+          final intListPropertyParam =
+              const fb.ListReader<int>(fb.Int64Reader(), lazy: false)
+                  .vTableGet(buffer, rootOffset, 28, []);
+          final doubleListPropertyParam =
+              const fb.ListReader<double>(fb.Float64Reader(), lazy: false)
+                  .vTableGet(buffer, rootOffset, 30, []);
+          final boolPropertyParam =
+              const fb.BoolReader().vTableGet(buffer, rootOffset, 56, false);
+          final nullableBoolPropertyParam =
+              const fb.BoolReader().vTableGetNullable(buffer, rootOffset, 58);
+          final optionalDoubleListPropertyParam =
+              const fb.ListReader<double>(fb.Float64Reader(), lazy: false)
+                  .vTableGetNullable(buffer, rootOffset, 32);
+          final nullableAmountOfItemsParam =
+              const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 34);
+          final int8ListPropertyParam = const fb.Int8ListReader(lazy: false)
+              .vTableGetNullable(buffer, rootOffset, 42) as Int8List?;
+          final uint8ListPropertyParam = const fb.Uint8ListReader(lazy: false)
+              .vTableGetNullable(buffer, rootOffset, 44) as Uint8List?;
+          final int16ListPropertyParam = const obx_int.Int16ListReader()
+              .vTableGetNullable(buffer, rootOffset, 46);
+          final uint16ListPropertyParam = const obx_int.Uint16ListReader()
+              .vTableGetNullable(buffer, rootOffset, 48);
+          final int32ListPropertyParam = const obx_int.Int32ListReader()
+              .vTableGetNullable(buffer, rootOffset, 50);
+          final uint32ListPropertyParam = const obx_int.Uint32ListReader()
+              .vTableGetNullable(buffer, rootOffset, 52);
+          final int64ListPropertyParam = const obx_int.Int64ListReader()
+              .vTableGetNullable(buffer, rootOffset, 54);
           final object = Category(
               name: nameParam,
               description: descriptionParam,
-              iconName: iconNameParam)
-            ..dbId =
-                const fb.Int64Reader().vTableGet(buffer, rootOffset, 16, 0);
+              iconName: iconNameParam,
+              nonEditableProperty: nonEditablePropertyParam,
+              amountOfItems: amountOfItemsParam,
+              doubleProperty: doublePropertyParam,
+              stringListProperty: stringListPropertyParam,
+              intListProperty: intListPropertyParam,
+              doubleListProperty: doubleListPropertyParam,
+              boolProperty: boolPropertyParam,
+              nullableBoolProperty: nullableBoolPropertyParam,
+              optionalDoubleListProperty: optionalDoubleListPropertyParam,
+              nullableAmountOfItems: nullableAmountOfItemsParam,
+              int8ListProperty: int8ListPropertyParam,
+              uint8ListProperty: uint8ListPropertyParam,
+              int16ListProperty: int16ListPropertyParam,
+              uint16ListProperty: uint16ListPropertyParam,
+              int32ListProperty: int32ListPropertyParam,
+              uint32ListProperty: uint32ListPropertyParam,
+              int64ListProperty: int64ListPropertyParam)
+            ..dbId = const fb.Int64Reader().vTableGet(buffer, rootOffset, 16, 0)
+            ..nullableDoubleProperty = const fb.Float64Reader()
+                .vTableGetNullable(buffer, rootOffset, 36)
+            ..nullableStringListProperty = const fb.ListReader<String>(
+                    fb.StringReader(asciiOptimization: true),
+                    lazy: false)
+                .vTableGetNullable(buffer, rootOffset, 38)
+            ..nullableIntListProperty =
+                const fb.ListReader<int>(fb.Int64Reader(), lazy: false)
+                    .vTableGetNullable(buffer, rootOffset, 40);
 
           return object;
         }),
@@ -396,6 +622,86 @@ class Category_ {
   /// See [Category.dbId].
   static final dbId =
       obx.QueryIntegerProperty<Category>(_entities[0].properties[3]);
+
+  /// See [Category.amountOfItems].
+  static final amountOfItems =
+      obx.QueryIntegerProperty<Category>(_entities[0].properties[4]);
+
+  /// See [Category.nonEditableProperty].
+  static final nonEditableProperty =
+      obx.QueryIntegerProperty<Category>(_entities[0].properties[5]);
+
+  /// See [Category.doubleProperty].
+  static final doubleProperty =
+      obx.QueryDoubleProperty<Category>(_entities[0].properties[6]);
+
+  /// See [Category.stringListProperty].
+  static final stringListProperty =
+      obx.QueryStringVectorProperty<Category>(_entities[0].properties[7]);
+
+  /// See [Category.intListProperty].
+  static final intListProperty =
+      obx.QueryIntegerVectorProperty<Category>(_entities[0].properties[8]);
+
+  /// See [Category.doubleListProperty].
+  static final doubleListProperty =
+      obx.QueryDoubleVectorProperty<Category>(_entities[0].properties[9]);
+
+  /// See [Category.optionalDoubleListProperty].
+  static final optionalDoubleListProperty =
+      obx.QueryDoubleVectorProperty<Category>(_entities[0].properties[10]);
+
+  /// See [Category.nullableAmountOfItems].
+  static final nullableAmountOfItems =
+      obx.QueryIntegerProperty<Category>(_entities[0].properties[11]);
+
+  /// See [Category.nullableDoubleProperty].
+  static final nullableDoubleProperty =
+      obx.QueryDoubleProperty<Category>(_entities[0].properties[12]);
+
+  /// See [Category.nullableStringListProperty].
+  static final nullableStringListProperty =
+      obx.QueryStringVectorProperty<Category>(_entities[0].properties[13]);
+
+  /// See [Category.nullableIntListProperty].
+  static final nullableIntListProperty =
+      obx.QueryIntegerVectorProperty<Category>(_entities[0].properties[14]);
+
+  /// See [Category.int8ListProperty].
+  static final int8ListProperty =
+      obx.QueryByteVectorProperty<Category>(_entities[0].properties[15]);
+
+  /// See [Category.uint8ListProperty].
+  static final uint8ListProperty =
+      obx.QueryByteVectorProperty<Category>(_entities[0].properties[16]);
+
+  /// See [Category.int16ListProperty].
+  static final int16ListProperty =
+      obx.QueryIntegerVectorProperty<Category>(_entities[0].properties[17]);
+
+  /// See [Category.uint16ListProperty].
+  static final uint16ListProperty =
+      obx.QueryIntegerVectorProperty<Category>(_entities[0].properties[18]);
+
+  /// See [Category.int32ListProperty].
+  static final int32ListProperty =
+      obx.QueryIntegerVectorProperty<Category>(_entities[0].properties[19]);
+
+  /// See [Category.uint32ListProperty].
+  static final uint32ListProperty =
+      obx.QueryIntegerVectorProperty<Category>(_entities[0].properties[20]);
+
+  /// See [Category.int64ListProperty].
+  static final int64ListProperty =
+      obx.QueryIntegerVectorProperty<Category>(_entities[0].properties[21]);
+
+  /// See [Category.boolProperty].
+  static final boolProperty =
+      obx.QueryBooleanProperty<Category>(_entities[0].properties[22]);
+
+  /// See [Category.nullableBoolProperty].
+  static final nullableBoolProperty =
+      obx.QueryBooleanProperty<Category>(_entities[0].properties[23]);
 }
 
 /// [Comment] entity fields to define ObjectBox queries.

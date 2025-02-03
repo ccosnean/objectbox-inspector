@@ -9,6 +9,8 @@ import 'package:objectbox_inspector_generator/src/constants.dart';
 class CodeBuilder extends Builder {
   @override
   FutureOr<void> build(BuildStep buildStep) async {
+    CodeStorage.addImport("import 'dart:typed_data';");
+
     final code = CodeStorage.build();
 
     final inputId = buildStep.inputId;

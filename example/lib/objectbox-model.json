@@ -5,15 +5,13 @@
   "entities": [
     {
       "id": "1:9204389335100116947",
-      "lastPropertyId": "8:588666454146585678",
+      "lastPropertyId": "28:1999651318095953159",
       "name": "Category",
       "properties": [
         {
           "id": "2:6607034592255374534",
           "name": "name",
-          "type": 9,
-          "flags": 2080,
-          "indexId": "1:2065247353024696940"
+          "type": 9
         },
         {
           "id": "3:4829630488897594594",
@@ -30,6 +28,106 @@
           "name": "dbId",
           "type": 6,
           "flags": 1
+        },
+        {
+          "id": "9:2062722448128687585",
+          "name": "amountOfItems",
+          "type": 6
+        },
+        {
+          "id": "10:8886756930641882719",
+          "name": "nonEditableProperty",
+          "type": 6
+        },
+        {
+          "id": "11:6091883322936348435",
+          "name": "doubleProperty",
+          "type": 8
+        },
+        {
+          "id": "12:2595818076717668592",
+          "name": "stringListProperty",
+          "type": 30
+        },
+        {
+          "id": "13:4099902734138089878",
+          "name": "intListProperty",
+          "type": 27
+        },
+        {
+          "id": "14:1155316597669794636",
+          "name": "doubleListProperty",
+          "type": 29
+        },
+        {
+          "id": "15:7962992338030769794",
+          "name": "optionalDoubleListProperty",
+          "type": 29
+        },
+        {
+          "id": "16:3588640737214992292",
+          "name": "nullableAmountOfItems",
+          "type": 6
+        },
+        {
+          "id": "17:2576496511610859708",
+          "name": "nullableDoubleProperty",
+          "type": 8
+        },
+        {
+          "id": "18:4445747466688849729",
+          "name": "nullableStringListProperty",
+          "type": 30
+        },
+        {
+          "id": "19:8926273281359589052",
+          "name": "nullableIntListProperty",
+          "type": 27
+        },
+        {
+          "id": "20:7789036155164502016",
+          "name": "int8ListProperty",
+          "type": 23
+        },
+        {
+          "id": "21:475024681007208117",
+          "name": "uint8ListProperty",
+          "type": 23
+        },
+        {
+          "id": "22:4634017462141807647",
+          "name": "int16ListProperty",
+          "type": 24
+        },
+        {
+          "id": "23:875216484215337591",
+          "name": "uint16ListProperty",
+          "type": 24
+        },
+        {
+          "id": "24:5067060722240609469",
+          "name": "int32ListProperty",
+          "type": 26
+        },
+        {
+          "id": "25:7054927296247103900",
+          "name": "uint32ListProperty",
+          "type": 26
+        },
+        {
+          "id": "26:1065894522826240344",
+          "name": "int64ListProperty",
+          "type": 27
+        },
+        {
+          "id": "27:8103229196711961164",
+          "name": "boolProperty",
+          "type": 1
+        },
+        {
+          "id": "28:1999651318095953159",
+          "name": "nullableBoolProperty",
+          "type": 1
         }
       ],
       "relations": []
@@ -150,7 +248,9 @@
   "modelVersion": 5,
   "modelVersionParserMinimum": 5,
   "retiredEntityUids": [],
-  "retiredIndexUids": [],
+  "retiredIndexUids": [
+    2065247353024696940
+  ],
   "retiredPropertyUids": [
     850449383254443506,
     7493509711066537935,

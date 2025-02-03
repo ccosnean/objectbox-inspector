@@ -34,18 +34,22 @@ import 'package:objectbox/objectbox.dart';
 ///   toManyRelation: ToManyRelation(rel: post.comments),
 /// );
 /// ```
-class InspectableProperty {
+class InspectableProperty<T> {
   final String name;
-  final dynamic value;
+  T? value;
   final ToOneRelation? toOneRelation;
   final ToManyRelation? toManyRelation;
+  final ValueChanged<dynamic>? onChanged;
+
+  final String type;
 
   InspectableProperty({
     required this.name,
     this.value,
     this.toOneRelation,
     this.toManyRelation,
-  });
+    this.onChanged,
+  }) : type = T.toString();
 }
 
 /// A class that represents a ToOne relation of an ObjectBox entity.

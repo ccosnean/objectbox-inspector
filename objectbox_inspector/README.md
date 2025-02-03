@@ -6,6 +6,33 @@ This package provides a visual interface for all the classes annotated with `@En
 
 ![Objectbox Inspector Demo](./assets/demo.png)
 
+## Features
+
+- [x] view boxes
+- [x] auto navigate to related entities
+- [x] view entities
+- [x] Edit non-relation & non-final entity properties
+
+## Limitations
+
+There are some types that the editor `DOES NOT` support yet.
+
+- `Int8List`
+- `Uint8List`
+- `Int16List`
+- `Uint16List`
+- `Int32List`
+- `Uint32List`
+- `Int64List`
+- `Uint64List`
+- `Float32List`
+- `Float64List`
+
+Also the `int` and `double` have the signed functionality, and this editor does not disable it for unsigned `PropertyType`'s. [described here](https://docs.objectbox.io/advanced/custom-types).
+
+
+> Note: they are still viewable.
+
 ## Usage
 
 To use the Objectbox Inspector, you need to add the `objectbox_inspector` and [objectbox_inspector_generator](https://pub.dev/packages/objectbox_inspector_generator) dependency to your project.

@@ -1,3 +1,9 @@
+## 1.0.0
+
+* Adds editing support.
+* Adds copy to clipboard support.
+* Changes UI to fit new capabilities.
+
 ## 0.0.10
 
 * Fixes ui bugs to fit dark theme better.

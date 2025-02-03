@@ -1,3 +1,8 @@
+## 1.0.0
+
+* Adds editing support.
+* Imports `dart:typed_data`.
+
 ## 0.0.10
 
 * Fixes ui bugs to fit dark theme better.
