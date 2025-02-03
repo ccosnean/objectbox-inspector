@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:objectbox/objectbox.dart';
 
 /// A class that represents an inspectable property of an ObjectBox entity.

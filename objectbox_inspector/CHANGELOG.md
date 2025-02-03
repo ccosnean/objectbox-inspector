@@ -1,3 +1,7 @@
+## 0.0.10
+
+* Fixes ui bugs to fit dark theme better.
+
 ## 0.0.9
 
 * Adjusts ui to fit dark theme better.

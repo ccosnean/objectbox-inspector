@@ -401,14 +401,14 @@ packages:
       path: "../objectbox_inspector"
       relative: true
     source: path
-    version: "0.0.6"
+    version: "0.0.9"
   objectbox_inspector_generator:
     dependency: "direct dev"
     description:
       path: "../objectbox_inspector_generator"
       relative: true
     source: path
-    version: "0.0.6"
+    version: "0.0.9"
   package_config:
     dependency: transitive
     description:

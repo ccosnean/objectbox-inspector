@@ -36,6 +36,7 @@ class ObjectboxInspectorPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
     final tt = Theme.of(context).textTheme;
+    final cs = Theme.of(context).colorScheme;
 
     return Scaffold(
       appBar: AppBar(
@@ -45,6 +46,7 @@ class ObjectboxInspectorPage extends StatelessWidget {
             fontWeight: FontWeight.w500,
           ),
         ),
+        backgroundColor: cs.surface,
       ),
       body: ListView.builder(
         padding: EdgeInsets.only(
