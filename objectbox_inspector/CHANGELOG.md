@@ -1,3 +1,7 @@
+## 0.0.9
+
+* Adjusts ui to fit dark theme better.
+
 ## 0.0.8
 
 * Updates demo picture to fit new ui.

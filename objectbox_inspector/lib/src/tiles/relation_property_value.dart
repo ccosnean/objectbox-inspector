@@ -14,12 +14,13 @@ class ToOneRelationshipPropertyValue extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tt = Theme.of(context).textTheme;
+    final cs = Theme.of(context).colorScheme;
 
     return Align(
       alignment: Alignment.centerLeft,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.deepOrange.shade100,
+          color: cs.primaryContainer,
           borderRadius: BorderRadius.circular(4),
         ),
         child: Material(
@@ -36,14 +37,14 @@ class ToOneRelationshipPropertyValue extends StatelessWidget {
                   Text(
                     relation.previewString,
                     style: tt.bodyMedium?.copyWith(
-                      color: Colors.deepOrange,
+                      color: cs.primary,
                     ),
                   ),
                   const SizedBox(width: 4),
-                  const Icon(
+                  Icon(
                     Icons.link,
                     size: 16,
-                    color: Colors.deepOrange,
+                    color: cs.primary,
                   ),
                 ],
               ),
@@ -68,12 +69,13 @@ class ToManyRelationshipPropertyValue extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tt = Theme.of(context).textTheme;
+    final cs = Theme.of(context).colorScheme;
 
     return Align(
       alignment: Alignment.centerLeft,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.deepOrange.shade100,
+          color: cs.primaryContainer,
           borderRadius: BorderRadius.circular(4),
         ),
         child: Material(
@@ -90,14 +92,14 @@ class ToManyRelationshipPropertyValue extends StatelessWidget {
                   Text(
                     relation.previewString,
                     style: tt.bodyMedium?.copyWith(
-                      color: Colors.deepOrange,
+                      color: cs.primary,
                     ),
                   ),
                   const SizedBox(width: 4),
-                  const Icon(
+                  Icon(
                     Icons.link,
                     size: 16,
-                    color: Colors.deepOrange,
+                    color: cs.primary,
                   ),
                 ],
               ),

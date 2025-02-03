@@ -24,6 +24,7 @@ class _EntityListTileState extends State<EntityListTile> {
         ? widget.entity.properties
         : widget.entity.properties.take(2).toList();
     final tt = Theme.of(context).textTheme;
+    final cs = Theme.of(context).colorScheme;
     return Padding(
       padding: const EdgeInsets.only(
         left: 16,
@@ -33,7 +34,7 @@ class _EntityListTileState extends State<EntityListTile> {
       ),
       child: Card(
         elevation: 2,
-        color: widget.isSelected ? Colors.blue.shade50 : null,
+        color: widget.isSelected ? cs.surfaceContainerHighest : null,
         child: Material(
           color: Colors.transparent,
           clipBehavior: Clip.hardEdge,

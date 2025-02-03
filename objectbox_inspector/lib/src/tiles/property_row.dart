@@ -12,11 +12,12 @@ class PropertyRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tt = Theme.of(context).textTheme;
+    final cs = Theme.of(context).colorScheme;
 
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 4),
       decoration: BoxDecoration(
-        color: Colors.black.withOpacity(0.05),
+        color: cs.onSurface.withOpacity(0.05),
         borderRadius: BorderRadius.circular(12),
       ),
       padding: const EdgeInsets.only(

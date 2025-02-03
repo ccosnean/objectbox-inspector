@@ -12,6 +12,14 @@ void main() async {
   runApp(const ExampleApp());
 }
 
+final lightTheme = ThemeData.light(
+  useMaterial3: true,
+);
+
+final darkTheme = ThemeData.dark(
+  useMaterial3: true,
+);
+
 class ExampleApp extends StatelessWidget {
   const ExampleApp({super.key});
 
@@ -19,10 +27,7 @@ class ExampleApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: darkTheme,
       home: const HomePage(),
     );
   }
