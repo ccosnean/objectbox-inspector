@@ -2,19 +2,174 @@
 
 import 'package:objectbox/objectbox.dart';
 import 'package:objectbox_inspector/objectbox_inspector.dart';
-import 'models/category.dart';
 import 'models/post.dart';
 import 'models/comment.dart';
 import 'models/user.dart';
+import 'models/category.dart';
 import 'dart:typed_data';
 
 List<InspectableBox> getInspectableBoxes(Store store) {
   return [
-    buildCategoryInspectableBox(store),
     buildPostInspectableBox(store),
     buildCommentInspectableBox(store),
     buildUserInspectableBox(store),
+    buildCategoryInspectableBox(store),
   ];
+}
+
+InspectableBox buildPostInspectableBox(Store store) {
+  final box = store.box<Post>();
+  final allEntities = box.getAll();
+  final entities = allEntities
+      .map(
+        (entity) => InspectableEntity(
+          id: entity.id,
+          properties: [
+            InspectableProperty<int>(
+              name: 'id',
+              value: entity.id,
+            ),
+            InspectableProperty<String>(
+              name: 'title',
+              value: entity.title,
+              onChanged: (value) {
+                entity.title = value;
+                box.put(entity);
+              },
+            ),
+            InspectableProperty<String>(
+              name: 'content',
+              value: entity.content,
+              onChanged: (value) {
+                entity.content = value;
+                box.put(entity);
+              },
+            ),
+            InspectableProperty<DateTime>(
+              name: 'createdAt',
+              value: entity.createdAt,
+              onChanged: (value) {
+                entity.createdAt = value;
+                box.put(entity);
+              },
+            ),
+            InspectableProperty<DateTime?>(
+              name: 'updatedAt',
+              value: entity.updatedAt,
+              onChanged: (value) {
+                entity.updatedAt = value;
+                box.put(entity);
+              },
+            ),
+            InspectableProperty(
+              name: 'author',
+              toOneRelation: ToOneRelation<User>(rel: entity.author),
+            ),
+            InspectableProperty(
+              name: 'comments',
+              toManyRelation: ToManyRelation<Comment>(
+                rel: entity.comments,
+                ids: entity.comments.map((e) => e.id).toList(),
+              ),
+            ),
+          ],
+        ),
+      )
+      .toList();
+
+  return InspectableBox(
+    boxName: 'Post',
+    maxEntities: box.count(),
+    entityGetter: () => entities,
+  );
+}
+
+InspectableBox buildCommentInspectableBox(Store store) {
+  final box = store.box<Comment>();
+  final allEntities = box.getAll();
+  final entities = allEntities
+      .map(
+        (entity) => InspectableEntity(
+          id: entity.id,
+          properties: [
+            InspectableProperty<int>(
+              name: 'id',
+              value: entity.id,
+            ),
+            InspectableProperty<String>(
+              name: 'content',
+              value: entity.content,
+              onChanged: (value) {
+                entity.content = value;
+                box.put(entity);
+              },
+            ),
+            InspectableProperty<DateTime>(
+              name: 'createdAt',
+              value: entity.createdAt,
+              onChanged: (value) {
+                entity.createdAt = value;
+                box.put(entity);
+              },
+            ),
+            InspectableProperty(
+              name: 'author',
+              toOneRelation: ToOneRelation<User>(rel: entity.author),
+            ),
+            InspectableProperty(
+              name: 'post',
+              toOneRelation: ToOneRelation<Post>(rel: entity.post),
+            ),
+          ],
+        ),
+      )
+      .toList();
+
+  return InspectableBox(
+    boxName: 'Comment',
+    maxEntities: box.count(),
+    entityGetter: () => entities,
+  );
+}
+
+InspectableBox buildUserInspectableBox(Store store) {
+  final box = store.box<User>();
+  final allEntities = box.getAll();
+  final entities = allEntities
+      .map(
+        (entity) => InspectableEntity(
+          id: entity.id,
+          properties: [
+            InspectableProperty<int>(
+              name: 'id',
+              value: entity.id,
+            ),
+            InspectableProperty<String>(
+              name: 'email',
+              value: entity.email,
+              onChanged: (value) {
+                entity.email = value;
+                box.put(entity);
+              },
+            ),
+            InspectableProperty<String>(
+              name: 'name',
+              value: entity.name,
+              onChanged: (value) {
+                entity.name = value;
+                box.put(entity);
+              },
+            ),
+          ],
+        ),
+      )
+      .toList();
+
+  return InspectableBox(
+    boxName: 'User',
+    maxEntities: box.count(),
+    entityGetter: () => entities,
+  );
 }
 
 InspectableBox buildCategoryInspectableBox(Store store) {
@@ -216,161 +371,6 @@ InspectableBox buildCategoryInspectableBox(Store store) {
 
   return InspectableBox(
     boxName: 'Category',
-    maxEntities: box.count(),
-    entityGetter: () => entities,
-  );
-}
-
-InspectableBox buildPostInspectableBox(Store store) {
-  final box = store.box<Post>();
-  final allEntities = box.getAll();
-  final entities = allEntities
-      .map(
-        (entity) => InspectableEntity(
-          id: entity.id,
-          properties: [
-            InspectableProperty<int>(
-              name: 'id',
-              value: entity.id,
-            ),
-            InspectableProperty<String>(
-              name: 'title',
-              value: entity.title,
-              onChanged: (value) {
-                entity.title = value;
-                box.put(entity);
-              },
-            ),
-            InspectableProperty<String>(
-              name: 'content',
-              value: entity.content,
-              onChanged: (value) {
-                entity.content = value;
-                box.put(entity);
-              },
-            ),
-            InspectableProperty<DateTime>(
-              name: 'createdAt',
-              value: entity.createdAt,
-              onChanged: (value) {
-                entity.createdAt = value;
-                box.put(entity);
-              },
-            ),
-            InspectableProperty<DateTime?>(
-              name: 'updatedAt',
-              value: entity.updatedAt,
-              onChanged: (value) {
-                entity.updatedAt = value;
-                box.put(entity);
-              },
-            ),
-            InspectableProperty(
-              name: 'author',
-              toOneRelation: ToOneRelation<User>(rel: entity.author),
-            ),
-            InspectableProperty(
-              name: 'comments',
-              toManyRelation: ToManyRelation<Comment>(
-                rel: entity.comments,
-                ids: entity.comments.map((e) => e.id).toList(),
-              ),
-            ),
-          ],
-        ),
-      )
-      .toList();
-
-  return InspectableBox(
-    boxName: 'Post',
-    maxEntities: box.count(),
-    entityGetter: () => entities,
-  );
-}
-
-InspectableBox buildCommentInspectableBox(Store store) {
-  final box = store.box<Comment>();
-  final allEntities = box.getAll();
-  final entities = allEntities
-      .map(
-        (entity) => InspectableEntity(
-          id: entity.id,
-          properties: [
-            InspectableProperty<int>(
-              name: 'id',
-              value: entity.id,
-            ),
-            InspectableProperty<String>(
-              name: 'content',
-              value: entity.content,
-              onChanged: (value) {
-                entity.content = value;
-                box.put(entity);
-              },
-            ),
-            InspectableProperty<DateTime>(
-              name: 'createdAt',
-              value: entity.createdAt,
-              onChanged: (value) {
-                entity.createdAt = value;
-                box.put(entity);
-              },
-            ),
-            InspectableProperty(
-              name: 'author',
-              toOneRelation: ToOneRelation<User>(rel: entity.author),
-            ),
-            InspectableProperty(
-              name: 'post',
-              toOneRelation: ToOneRelation<Post>(rel: entity.post),
-            ),
-          ],
-        ),
-      )
-      .toList();
-
-  return InspectableBox(
-    boxName: 'Comment',
-    maxEntities: box.count(),
-    entityGetter: () => entities,
-  );
-}
-
-InspectableBox buildUserInspectableBox(Store store) {
-  final box = store.box<User>();
-  final allEntities = box.getAll();
-  final entities = allEntities
-      .map(
-        (entity) => InspectableEntity(
-          id: entity.id,
-          properties: [
-            InspectableProperty<int>(
-              name: 'id',
-              value: entity.id,
-            ),
-            InspectableProperty<String>(
-              name: 'email',
-              value: entity.email,
-              onChanged: (value) {
-                entity.email = value;
-                box.put(entity);
-              },
-            ),
-            InspectableProperty<String>(
-              name: 'name',
-              value: entity.name,
-              onChanged: (value) {
-                entity.name = value;
-                box.put(entity);
-              },
-            ),
-          ],
-        ),
-      )
-      .toList();
-
-  return InspectableBox(
-    boxName: 'User',
     maxEntities: box.count(),
     entityGetter: () => entities,
   );

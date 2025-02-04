@@ -1,3 +1,7 @@
+## 1.0.1
+
+* changes the minimum sdk version to 3.1.0
+
 ## 1.0.0
 
 * Adds editing support.
