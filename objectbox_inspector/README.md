@@ -4,7 +4,7 @@
 
 This package provides a visual interface for all the classes annotated with `@Entity` in [ObjectBox](https://pub.dev/packages/objectbox).
 
-![Objectbox Inspector Demo](./assets/demo.png)
+<img src="./assets/demo.gif" width="250"/>
 
 ## Features
 
@@ -12,6 +12,7 @@ This package provides a visual interface for all the classes annotated with `@En
 - [x] auto navigate to related entities
 - [x] view entities
 - [x] Edit non-relation & non-final entity properties
+- [x] Query entities by fields
 
 ## Limitations
 
@@ -33,6 +34,13 @@ Also the `int` and `double` have the signed functionality, and this editor does 
 
 > Note: they are still viewable.
 
+The Search is not complete yet. It only supports basic types.
+
+- `String`
+- `int`
+- `double`
+- `bool`
+
 ## Usage
 
 To use the Objectbox Inspector, you need to add the `objectbox_inspector` and [objectbox_inspector_generator](https://pub.dev/packages/objectbox_inspector_generator) dependency to your project.
@@ -49,12 +57,24 @@ dev_dependencies:
 
 After running `flutter pub get`, you can run the `objectbox_inspector` command to generate the inspector.
 
-```bash
+```zsh
 flutter pub get
-flutter pub run build_runner build
+```
+
+To generate the inspector data, run:
+
+```zsh
+dart run build_runner build --delete-conflicting-outputs
 ```
 
 This will generate a `objectbox.inspector.g.dart` file in your project. That contains the necessary code to run the inspector.
+
+Sometimes the newly added fields are not detected by build runner. In that case you can clean the build and build again.
+
+```zsh
+dart run build_runner clean
+dart run build_runner build --delete-conflicting-outputs
+```
 
 ## Example
 

@@ -1,6 +1,6 @@
 name: objectbox_inspector_generator
 description: "The generator for objectbox_inspector, getInspectableBoxes mainly, that is required by openObjectboxInspector."
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/ccosnean/objectbox-inspector/tree/main/objectbox_inspector_generator
 
 environment:

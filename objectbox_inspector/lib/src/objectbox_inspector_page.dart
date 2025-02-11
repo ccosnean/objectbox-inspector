@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:objectbox_inspector/src/box_page_navigator.dart';
-import 'package:objectbox_inspector/src/tiles/box_list_tile.dart';
+import 'package:objectbox_inspector/src/box/tiles/box_list_tile.dart';
 
 import 'models/inspectable_box.dart';
 

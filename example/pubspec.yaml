@@ -14,11 +14,15 @@ dependencies:
   path_provider: ^2.1.2
   path: ^1.8.3
   objectbox_flutter_libs:
+  freezed_annotation:
+  json_annotation:
   objectbox_inspector:
     path: ../objectbox_inspector/
   # objectbox_inspector: ^0.0.6
 
 dev_dependencies:
+  freezed:
+  json_serializable:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0

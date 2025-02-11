@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:objectbox_inspector/objectbox_inspector.dart';
-import 'package:objectbox_inspector/src/box_page.dart';
+import 'package:objectbox_inspector/src/box/box_page.dart';
 
 /// A utility class that handles navigation to [BoxPage]s and manages the available boxes.
 ///

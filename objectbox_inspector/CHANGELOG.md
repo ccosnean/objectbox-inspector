@@ -1,3 +1,7 @@
+## 1.0.2
+
+* Adds search by field support.
+
 ## 1.0.1
 
 * changes the minimum sdk version to 3.1.0
