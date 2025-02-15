@@ -14,7 +14,8 @@ enum SupportedPropertyTypes {
   const SupportedPropertyTypes({required this.type});
 
   bool matches(InspectableProperty property) {
-    return property.type == type;
+    // to support optional types
+    return property.type.startsWith(type);
   }
 }
 

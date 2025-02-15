@@ -60,7 +60,8 @@ class _SearchPageState extends State<SearchPage> {
             slivers: [
               const SliverAppBar(
                 leading: SizedBox(),
-                title: Text('Search'),
+                title: Text('Query'),
+                centerTitle: true,
               ),
               SliverList.separated(
                 itemBuilder: (context, index) {

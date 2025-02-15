@@ -1,3 +1,8 @@
+## 1.0.3
+
+* Fixes bug where optional types were not supported in the search.
+* Adds search for box name.
+
 ## 1.0.2
 
 * Adds search by field support.

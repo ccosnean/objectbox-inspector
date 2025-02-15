@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:objectbox_inspector/src/common/highlited_text.dart';
 import 'package:objectbox_inspector/src/models/inspectable_box.dart';
 
 class BoxListTile extends StatelessWidget {
   final InspectableBox box;
+  final String? highlight;
   final VoidCallback onTap;
 
   const BoxListTile({
     super.key,
     required this.box,
     required this.onTap,
+    this.highlight,
   });
 
   @override
@@ -38,8 +41,9 @@ class BoxListTile extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "$boxName box",
+                        HighlightedText(
+                          text: boxName,
+                          highlight: highlight,
                           style: tt.titleMedium,
                         ),
                         Text(

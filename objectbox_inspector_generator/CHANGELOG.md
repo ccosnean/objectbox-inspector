@@ -1,3 +1,7 @@
+## 1.0.3
+
+* Version bump for package synchronization.
+
 ## 1.0.2
 
 * Adds search by field support.
