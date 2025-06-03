@@ -87,15 +87,15 @@ class _BoxPageState extends State<BoxPage> {
   void _onQueryChanged(InspectableQuery newQuery) {
     setState(() => query = newQuery);
 
-    print(
-      'query changed: ${query.conditions.map(
-            (e) => {
-              'property': e.property,
-              'operation': e.operation,
-              'value': e.value,
-            },
-          ).toList()}',
-    );
+    // print(
+    //   'query changed: ${query.conditions.map(
+    //         (e) => {
+    //           'property': e.property,
+    //           'operation': e.operation,
+    //           'value': e.value,
+    //         },
+    //       ).toList()}',
+    // );
 
     _fetchEntities();
   }

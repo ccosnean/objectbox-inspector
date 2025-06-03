@@ -1,3 +1,7 @@
+## 1.0.5
+
+* Upgrades deprecated methods to their latest versions.
+
 ## 1.0.4
 
 * Updates underlying packages to work with latest objectbox version.

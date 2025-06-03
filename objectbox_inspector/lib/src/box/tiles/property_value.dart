@@ -205,7 +205,7 @@ class ListPropertyValue extends StatelessWidget {
       return Text(
         '[]',
         style: tt.bodyLarge?.copyWith(
-          color: cs.onSurface.withOpacity(0.5),
+          color: cs.onSurface.withValues(alpha: 0.5),
         ),
       );
     }
@@ -223,7 +223,7 @@ class ListPropertyValue extends StatelessWidget {
                 bottom: 2,
               ),
               decoration: BoxDecoration(
-                color: cs.onSurface.withOpacity(0.1),
+                color: cs.onSurface.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(4),
               ),
               child: Text(

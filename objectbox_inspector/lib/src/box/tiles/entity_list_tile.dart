@@ -50,7 +50,7 @@ class _EntityListTileState extends State<EntityListTile> {
                 decoration: BoxDecoration(
                   color: widget.isSelected
                       ? cs.primaryContainer
-                      : cs.onSurface.withOpacity(0.1),
+                      : cs.onSurface.withValues(alpha: 0.1),
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(12),
                     topRight: Radius.circular(12),

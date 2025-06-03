@@ -48,7 +48,7 @@ class _PropertyRowState extends State<PropertyRow> {
               : null,
           child: Container(
             decoration: BoxDecoration(
-              color: cs.onSurface.withOpacity(0.05),
+              color: cs.onSurface.withValues(alpha: 0.05),
             ),
             padding: const EdgeInsets.only(
               left: 12,
