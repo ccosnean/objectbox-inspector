@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  objectbox: ^4.0.3
+  objectbox: ^4.3.0
   path_provider: ^2.1.2
   path: ^1.8.3
   objectbox_flutter_libs:
@@ -23,11 +23,9 @@ dependencies:
 dev_dependencies:
   freezed:
   json_serializable:
-  flutter_test:
-    sdk: flutter
   flutter_lints: ^4.0.0
   build_runner: ^2.4.9
-  objectbox_generator: any
+  objectbox_generator: ^4.3.0
   # objectbox_inspector_generator: ^0.0.6
   objectbox_inspector_generator:
     path: ../objectbox_inspector_generator/

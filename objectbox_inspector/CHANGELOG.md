@@ -1,3 +1,7 @@
+## 1.0.4
+
+* Updates underlying packages to work with latest objectbox version.
+
 ## 1.0.3
 
 * Fixes bug where optional types were not supported in the search.
