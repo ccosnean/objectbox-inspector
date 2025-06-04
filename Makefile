@@ -17,6 +17,11 @@ check-generator:
 	dart pub get && \
 	dart analyze
 
+
+dry-publish: check-inspector check-generator
+	cd objectbox_inspector && flutter pub publish --dry-run
+	cd objectbox_inspector_generator && flutter pub publish --dry-run
+
 # Publish both packages
 publish: check publish-inspector publish-generator
 
