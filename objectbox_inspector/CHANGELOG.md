@@ -1,3 +1,7 @@
+## 1.0.6
+
+* Updates documentation to improve pub.dev points.
+
 ## 1.0.5
 
 * Upgrades deprecated methods to their latest versions.
