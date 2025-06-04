@@ -1,3 +1,7 @@
+## 1.0.7
+
+* Updated more pub points...
+
 ## 1.0.6
 
 * Updates documentation to improve pub.dev points.

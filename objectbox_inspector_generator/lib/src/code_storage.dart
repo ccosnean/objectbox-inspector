@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'package:dart_style/dart_style.dart';
+import 'package:pub_semver/pub_semver.dart' as pub_semver;
 
 class CodeStorage {
   static const header = '''
@@ -53,6 +54,8 @@ class CodeStorage {
       buffer.writeln();
     }
 
-    return DartFormatter().format(buffer.toString());
+    return DartFormatter(
+      languageVersion: pub_semver.Version.parse('3.6.1'),
+    ).format(buffer.toString());
   }
 }
