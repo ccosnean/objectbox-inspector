@@ -1,3 +1,8 @@
+## 1.0.8
+
+* Improves GitHub Actions testing workflow.
+* Fixes code alignment issues.
+
 ## 1.0.7
 
 * Updated more pub points...
