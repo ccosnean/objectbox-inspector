@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   build: ">=3.0.0 <4.0.0"
-  analyzer: '>=7.0.0 <8.0.0' # 5.1.0 has a bug where DartType.element has been removed.
+  analyzer: '>=7.0.0 <8.0.0'
   objectbox: ^5.0.0
   source_gen: ">=3.0.0 <4.0.0"
   dart_style: ">=2.0.0 <=3.0.1"
