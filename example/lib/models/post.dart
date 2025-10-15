@@ -20,9 +20,7 @@ class Post {
   @Backlink('post')
   final comments = ToMany<Comment>();
 
-  Post({
-    required this.title,
-    required this.content,
-  })  : id = 0,
-        createdAt = DateTime.now();
+  Post({required this.title, required this.content})
+    : id = 0,
+      createdAt = DateTime.now();
 }

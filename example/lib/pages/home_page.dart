@@ -49,9 +49,7 @@ class _HomePageState extends State<HomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => PostPage(
-                      postId: post.id,
-                    ),
+                    builder: (context) => PostPage(postId: post.id),
                   ),
                 );
               },

@@ -23,241 +23,286 @@ export 'package:objectbox/objectbox.dart'; // so that callers only have to impor
 
 final _entities = <obx_int.ModelEntity>[
   obx_int.ModelEntity(
-      id: const obx_int.IdUid(1, 9204389335100116947),
-      name: 'Category',
-      lastPropertyId: const obx_int.IdUid(28, 1999651318095953159),
-      flags: 0,
-      properties: <obx_int.ModelProperty>[
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(2, 6607034592255374534),
-            name: 'name',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(3, 4829630488897594594),
-            name: 'description',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(4, 6381161645811918549),
-            name: 'iconName',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(7, 8889435216445471141),
-            name: 'dbId',
-            type: 6,
-            flags: 1),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(9, 2062722448128687585),
-            name: 'amountOfItems',
-            type: 6,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(10, 8886756930641882719),
-            name: 'nonEditableProperty',
-            type: 6,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(11, 6091883322936348435),
-            name: 'doubleProperty',
-            type: 8,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(12, 2595818076717668592),
-            name: 'stringListProperty',
-            type: 30,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(13, 4099902734138089878),
-            name: 'intListProperty',
-            type: 27,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(14, 1155316597669794636),
-            name: 'doubleListProperty',
-            type: 29,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(15, 7962992338030769794),
-            name: 'optionalDoubleListProperty',
-            type: 29,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(16, 3588640737214992292),
-            name: 'nullableAmountOfItems',
-            type: 6,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(17, 2576496511610859708),
-            name: 'nullableDoubleProperty',
-            type: 8,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(18, 4445747466688849729),
-            name: 'nullableStringListProperty',
-            type: 30,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(19, 8926273281359589052),
-            name: 'nullableIntListProperty',
-            type: 27,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(20, 7789036155164502016),
-            name: 'int8ListProperty',
-            type: 23,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(21, 475024681007208117),
-            name: 'uint8ListProperty',
-            type: 23,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(22, 4634017462141807647),
-            name: 'int16ListProperty',
-            type: 24,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(23, 875216484215337591),
-            name: 'uint16ListProperty',
-            type: 24,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(24, 5067060722240609469),
-            name: 'int32ListProperty',
-            type: 26,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(25, 7054927296247103900),
-            name: 'uint32ListProperty',
-            type: 26,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(26, 1065894522826240344),
-            name: 'int64ListProperty',
-            type: 27,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(27, 8103229196711961164),
-            name: 'boolProperty',
-            type: 1,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(28, 1999651318095953159),
-            name: 'nullableBoolProperty',
-            type: 1,
-            flags: 0)
-      ],
-      relations: <obx_int.ModelRelation>[],
-      backlinks: <obx_int.ModelBacklink>[]),
+    id: const obx_int.IdUid(1, 9204389335100116947),
+    name: 'Category',
+    lastPropertyId: const obx_int.IdUid(28, 1999651318095953159),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 6607034592255374534),
+        name: 'name',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 4829630488897594594),
+        name: 'description',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(4, 6381161645811918549),
+        name: 'iconName',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(7, 8889435216445471141),
+        name: 'dbId',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(9, 2062722448128687585),
+        name: 'amountOfItems',
+        type: 6,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(10, 8886756930641882719),
+        name: 'nonEditableProperty',
+        type: 6,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(11, 6091883322936348435),
+        name: 'doubleProperty',
+        type: 8,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(12, 2595818076717668592),
+        name: 'stringListProperty',
+        type: 30,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(13, 4099902734138089878),
+        name: 'intListProperty',
+        type: 27,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(14, 1155316597669794636),
+        name: 'doubleListProperty',
+        type: 29,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(15, 7962992338030769794),
+        name: 'optionalDoubleListProperty',
+        type: 29,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(16, 3588640737214992292),
+        name: 'nullableAmountOfItems',
+        type: 6,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(17, 2576496511610859708),
+        name: 'nullableDoubleProperty',
+        type: 8,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(18, 4445747466688849729),
+        name: 'nullableStringListProperty',
+        type: 30,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(19, 8926273281359589052),
+        name: 'nullableIntListProperty',
+        type: 27,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(20, 7789036155164502016),
+        name: 'int8ListProperty',
+        type: 23,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(21, 475024681007208117),
+        name: 'uint8ListProperty',
+        type: 23,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(22, 4634017462141807647),
+        name: 'int16ListProperty',
+        type: 24,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(23, 875216484215337591),
+        name: 'uint16ListProperty',
+        type: 24,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(24, 5067060722240609469),
+        name: 'int32ListProperty',
+        type: 26,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(25, 7054927296247103900),
+        name: 'uint32ListProperty',
+        type: 26,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(26, 1065894522826240344),
+        name: 'int64ListProperty',
+        type: 27,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(27, 8103229196711961164),
+        name: 'boolProperty',
+        type: 1,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(28, 1999651318095953159),
+        name: 'nullableBoolProperty',
+        type: 1,
+        flags: 0,
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[],
+  ),
   obx_int.ModelEntity(
-      id: const obx_int.IdUid(2, 3282429361953021308),
-      name: 'Comment',
-      lastPropertyId: const obx_int.IdUid(5, 4273663842260461558),
-      flags: 0,
-      properties: <obx_int.ModelProperty>[
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(1, 8127382335773425290),
-            name: 'id',
-            type: 6,
-            flags: 1),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(2, 929877451502931493),
-            name: 'content',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(3, 496454568528374151),
-            name: 'createdAt',
-            type: 10,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(4, 7165556088328118335),
-            name: 'authorId',
-            type: 11,
-            flags: 520,
-            indexId: const obx_int.IdUid(2, 8919893336729362881),
-            relationTarget: 'User'),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(5, 4273663842260461558),
-            name: 'postId',
-            type: 11,
-            flags: 520,
-            indexId: const obx_int.IdUid(3, 466901588780305719),
-            relationTarget: 'Post')
-      ],
-      relations: <obx_int.ModelRelation>[],
-      backlinks: <obx_int.ModelBacklink>[]),
+    id: const obx_int.IdUid(2, 3282429361953021308),
+    name: 'Comment',
+    lastPropertyId: const obx_int.IdUid(5, 4273663842260461558),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 8127382335773425290),
+        name: 'id',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 929877451502931493),
+        name: 'content',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 496454568528374151),
+        name: 'createdAt',
+        type: 10,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(4, 7165556088328118335),
+        name: 'authorId',
+        type: 11,
+        flags: 520,
+        indexId: const obx_int.IdUid(2, 8919893336729362881),
+        relationTarget: 'User',
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(5, 4273663842260461558),
+        name: 'postId',
+        type: 11,
+        flags: 520,
+        indexId: const obx_int.IdUid(3, 466901588780305719),
+        relationTarget: 'Post',
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[],
+  ),
   obx_int.ModelEntity(
-      id: const obx_int.IdUid(3, 4280791827933621311),
-      name: 'Post',
-      lastPropertyId: const obx_int.IdUid(6, 2258164995607469926),
-      flags: 0,
-      properties: <obx_int.ModelProperty>[
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(1, 7446985561105612531),
-            name: 'id',
-            type: 6,
-            flags: 1),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(2, 1494765124165801189),
-            name: 'title',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(3, 8110165006178309588),
-            name: 'content',
-            type: 9,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(4, 6909237268806958605),
-            name: 'createdAt',
-            type: 10,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(5, 4357391179156416579),
-            name: 'updatedAt',
-            type: 10,
-            flags: 0),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(6, 2258164995607469926),
-            name: 'authorId',
-            type: 11,
-            flags: 520,
-            indexId: const obx_int.IdUid(4, 4729505839616281589),
-            relationTarget: 'User')
-      ],
-      relations: <obx_int.ModelRelation>[],
-      backlinks: <obx_int.ModelBacklink>[
-        obx_int.ModelBacklink(
-            name: 'comments', srcEntity: 'Comment', srcField: 'post')
-      ]),
+    id: const obx_int.IdUid(3, 4280791827933621311),
+    name: 'Post',
+    lastPropertyId: const obx_int.IdUid(6, 2258164995607469926),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 7446985561105612531),
+        name: 'id',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 1494765124165801189),
+        name: 'title',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 8110165006178309588),
+        name: 'content',
+        type: 9,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(4, 6909237268806958605),
+        name: 'createdAt',
+        type: 10,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(5, 4357391179156416579),
+        name: 'updatedAt',
+        type: 10,
+        flags: 0,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(6, 2258164995607469926),
+        name: 'authorId',
+        type: 11,
+        flags: 520,
+        indexId: const obx_int.IdUid(4, 4729505839616281589),
+        relationTarget: 'User',
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[
+      obx_int.ModelBacklink(
+        name: 'comments',
+        srcEntity: 'Comment',
+        srcField: 'post',
+      ),
+    ],
+  ),
   obx_int.ModelEntity(
-      id: const obx_int.IdUid(4, 2087573786649227116),
-      name: 'User',
-      lastPropertyId: const obx_int.IdUid(3, 2767074081521858293),
-      flags: 0,
-      properties: <obx_int.ModelProperty>[
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(1, 3120400413824991904),
-            name: 'id',
-            type: 6,
-            flags: 1),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(2, 5297253976437047871),
-            name: 'email',
-            type: 9,
-            flags: 2080,
-            indexId: const obx_int.IdUid(5, 2293397364878150452)),
-        obx_int.ModelProperty(
-            id: const obx_int.IdUid(3, 2767074081521858293),
-            name: 'name',
-            type: 9,
-            flags: 0)
-      ],
-      relations: <obx_int.ModelRelation>[],
-      backlinks: <obx_int.ModelBacklink>[])
+    id: const obx_int.IdUid(4, 2087573786649227116),
+    name: 'User',
+    lastPropertyId: const obx_int.IdUid(3, 2767074081521858293),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 3120400413824991904),
+        name: 'id',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 5297253976437047871),
+        name: 'email',
+        type: 9,
+        flags: 2080,
+        indexId: const obx_int.IdUid(5, 2293397364878150452),
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(3, 2767074081521858293),
+        name: 'name',
+        type: 9,
+        flags: 0,
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[],
+  ),
 ];
 
 /// Shortcut for [obx.Store.new] that passes [getObjectBoxModel] and for Flutter
@@ -271,335 +316,411 @@ final _entities = <obx_int.ModelEntity>[
 /// For Flutter apps, also calls `loadObjectBoxLibraryAndroidCompat()` from
 /// the ObjectBox Flutter library to fix loading the native ObjectBox library
 /// on Android 6 and older.
-Future<obx.Store> openStore(
-    {String? directory,
-    int? maxDBSizeInKB,
-    int? maxDataSizeInKB,
-    int? fileMode,
-    int? maxReaders,
-    bool queriesCaseSensitiveDefault = true,
-    String? macosApplicationGroup}) async {
+Future<obx.Store> openStore({
+  String? directory,
+  int? maxDBSizeInKB,
+  int? maxDataSizeInKB,
+  int? fileMode,
+  int? maxReaders,
+  bool queriesCaseSensitiveDefault = true,
+  String? macosApplicationGroup,
+}) async {
   await loadObjectBoxLibraryAndroidCompat();
-  return obx.Store(getObjectBoxModel(),
-      directory: directory ?? (await defaultStoreDirectory()).path,
-      maxDBSizeInKB: maxDBSizeInKB,
-      maxDataSizeInKB: maxDataSizeInKB,
-      fileMode: fileMode,
-      maxReaders: maxReaders,
-      queriesCaseSensitiveDefault: queriesCaseSensitiveDefault,
-      macosApplicationGroup: macosApplicationGroup);
+  return obx.Store(
+    getObjectBoxModel(),
+    directory: directory ?? (await defaultStoreDirectory()).path,
+    maxDBSizeInKB: maxDBSizeInKB,
+    maxDataSizeInKB: maxDataSizeInKB,
+    fileMode: fileMode,
+    maxReaders: maxReaders,
+    queriesCaseSensitiveDefault: queriesCaseSensitiveDefault,
+    macosApplicationGroup: macosApplicationGroup,
+  );
 }
 
 /// Returns the ObjectBox model definition for this project for use with
 /// [obx.Store.new].
 obx_int.ModelDefinition getObjectBoxModel() {
   final model = obx_int.ModelInfo(
-      entities: _entities,
-      lastEntityId: const obx_int.IdUid(4, 2087573786649227116),
-      lastIndexId: const obx_int.IdUid(5, 2293397364878150452),
-      lastRelationId: const obx_int.IdUid(0, 0),
-      lastSequenceId: const obx_int.IdUid(0, 0),
-      retiredEntityUids: const [],
-      retiredIndexUids: const [2065247353024696940],
-      retiredPropertyUids: const [
-        850449383254443506,
-        7493509711066537935,
-        5319693412517815094,
-        588666454146585678
-      ],
-      retiredRelationUids: const [],
-      modelVersion: 5,
-      modelVersionParserMinimum: 5,
-      version: 1);
+    entities: _entities,
+    lastEntityId: const obx_int.IdUid(4, 2087573786649227116),
+    lastIndexId: const obx_int.IdUid(5, 2293397364878150452),
+    lastRelationId: const obx_int.IdUid(0, 0),
+    lastSequenceId: const obx_int.IdUid(0, 0),
+    retiredEntityUids: const [],
+    retiredIndexUids: const [2065247353024696940],
+    retiredPropertyUids: const [
+      850449383254443506,
+      7493509711066537935,
+      5319693412517815094,
+      588666454146585678,
+    ],
+    retiredRelationUids: const [],
+    modelVersion: 5,
+    modelVersionParserMinimum: 5,
+    version: 1,
+  );
 
   final bindings = <Type, obx_int.EntityDefinition>{
     Category: obx_int.EntityDefinition<Category>(
-        model: _entities[0],
-        toOneRelations: (Category object) => [],
-        toManyRelations: (Category object) => {},
-        getId: (Category object) => object.dbId,
-        setId: (Category object, int id) {
-          object.dbId = id;
-        },
-        objectToFB: (Category object, fb.Builder fbb) {
-          final nameOffset = fbb.writeString(object.name);
-          final descriptionOffset = object.description == null
-              ? null
-              : fbb.writeString(object.description!);
-          final iconNameOffset = object.iconName == null
-              ? null
-              : fbb.writeString(object.iconName!);
-          final stringListPropertyOffset = fbb.writeList(object
-              .stringListProperty
+      model: _entities[0],
+      toOneRelations: (Category object) => [],
+      toManyRelations: (Category object) => {},
+      getId: (Category object) => object.dbId,
+      setId: (Category object, int id) {
+        object.dbId = id;
+      },
+      objectToFB: (Category object, fb.Builder fbb) {
+        final nameOffset = fbb.writeString(object.name);
+        final descriptionOffset = object.description == null
+            ? null
+            : fbb.writeString(object.description!);
+        final iconNameOffset = object.iconName == null
+            ? null
+            : fbb.writeString(object.iconName!);
+        final stringListPropertyOffset = fbb.writeList(
+          object.stringListProperty
               .map(fbb.writeString)
-              .toList(growable: false));
-          final intListPropertyOffset =
-              fbb.writeListInt64(object.intListProperty);
-          final doubleListPropertyOffset =
-              fbb.writeListFloat64(object.doubleListProperty);
-          final optionalDoubleListPropertyOffset =
-              object.optionalDoubleListProperty == null
-                  ? null
-                  : fbb.writeListFloat64(object.optionalDoubleListProperty!);
-          final nullableStringListPropertyOffset =
-              object.nullableStringListProperty == null
-                  ? null
-                  : fbb.writeList(object.nullableStringListProperty!
-                      .map(fbb.writeString)
-                      .toList(growable: false));
-          final nullableIntListPropertyOffset =
-              object.nullableIntListProperty == null
-                  ? null
-                  : fbb.writeListInt64(object.nullableIntListProperty!);
-          final int8ListPropertyOffset = object.int8ListProperty == null
-              ? null
-              : fbb.writeListInt8(object.int8ListProperty!);
-          final uint8ListPropertyOffset = object.uint8ListProperty == null
-              ? null
-              : fbb.writeListInt8(object.uint8ListProperty!);
-          final int16ListPropertyOffset = object.int16ListProperty == null
-              ? null
-              : fbb.writeListInt16(object.int16ListProperty!);
-          final uint16ListPropertyOffset = object.uint16ListProperty == null
-              ? null
-              : fbb.writeListInt16(object.uint16ListProperty!);
-          final int32ListPropertyOffset = object.int32ListProperty == null
-              ? null
-              : fbb.writeListInt32(object.int32ListProperty!);
-          final uint32ListPropertyOffset = object.uint32ListProperty == null
-              ? null
-              : fbb.writeListInt32(object.uint32ListProperty!);
-          final int64ListPropertyOffset = object.int64ListProperty == null
-              ? null
-              : fbb.writeListInt64(object.int64ListProperty!);
-          fbb.startTable(29);
-          fbb.addOffset(1, nameOffset);
-          fbb.addOffset(2, descriptionOffset);
-          fbb.addOffset(3, iconNameOffset);
-          fbb.addInt64(6, object.dbId);
-          fbb.addInt64(8, object.amountOfItems);
-          fbb.addInt64(9, object.nonEditableProperty);
-          fbb.addFloat64(10, object.doubleProperty);
-          fbb.addOffset(11, stringListPropertyOffset);
-          fbb.addOffset(12, intListPropertyOffset);
-          fbb.addOffset(13, doubleListPropertyOffset);
-          fbb.addOffset(14, optionalDoubleListPropertyOffset);
-          fbb.addInt64(15, object.nullableAmountOfItems);
-          fbb.addFloat64(16, object.nullableDoubleProperty);
-          fbb.addOffset(17, nullableStringListPropertyOffset);
-          fbb.addOffset(18, nullableIntListPropertyOffset);
-          fbb.addOffset(19, int8ListPropertyOffset);
-          fbb.addOffset(20, uint8ListPropertyOffset);
-          fbb.addOffset(21, int16ListPropertyOffset);
-          fbb.addOffset(22, uint16ListPropertyOffset);
-          fbb.addOffset(23, int32ListPropertyOffset);
-          fbb.addOffset(24, uint32ListPropertyOffset);
-          fbb.addOffset(25, int64ListPropertyOffset);
-          fbb.addBool(26, object.boolProperty);
-          fbb.addBool(27, object.nullableBoolProperty);
-          fbb.finish(fbb.endTable());
-          return object.dbId;
-        },
-        objectFromFB: (obx.Store store, ByteData fbData) {
-          final buffer = fb.BufferContext(fbData);
-          final rootOffset = buffer.derefObject(0);
-          final nameParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 6, '');
-          final descriptionParam =
-              const fb.StringReader(asciiOptimization: true)
-                  .vTableGetNullable(buffer, rootOffset, 8);
-          final iconNameParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGetNullable(buffer, rootOffset, 10);
-          final nonEditablePropertyParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 22, 0);
-          final amountOfItemsParam =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 20, 0);
-          final doublePropertyParam =
-              const fb.Float64Reader().vTableGet(buffer, rootOffset, 24, 0);
-          final stringListPropertyParam = const fb.ListReader<String>(
-                  fb.StringReader(asciiOptimization: true),
-                  lazy: false)
-              .vTableGet(buffer, rootOffset, 26, []);
-          final intListPropertyParam =
-              const fb.ListReader<int>(fb.Int64Reader(), lazy: false)
-                  .vTableGet(buffer, rootOffset, 28, []);
-          final doubleListPropertyParam =
-              const fb.ListReader<double>(fb.Float64Reader(), lazy: false)
-                  .vTableGet(buffer, rootOffset, 30, []);
-          final boolPropertyParam =
-              const fb.BoolReader().vTableGet(buffer, rootOffset, 56, false);
-          final nullableBoolPropertyParam =
-              const fb.BoolReader().vTableGetNullable(buffer, rootOffset, 58);
-          final optionalDoubleListPropertyParam =
-              const fb.ListReader<double>(fb.Float64Reader(), lazy: false)
-                  .vTableGetNullable(buffer, rootOffset, 32);
-          final nullableAmountOfItemsParam =
-              const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 34);
-          final int8ListPropertyParam = const fb.Int8ListReader(lazy: false)
-              .vTableGetNullable(buffer, rootOffset, 42) as Int8List?;
-          final uint8ListPropertyParam = const fb.Uint8ListReader(lazy: false)
-              .vTableGetNullable(buffer, rootOffset, 44) as Uint8List?;
-          final int16ListPropertyParam = const obx_int.Int16ListReader()
-              .vTableGetNullable(buffer, rootOffset, 46);
-          final uint16ListPropertyParam = const obx_int.Uint16ListReader()
-              .vTableGetNullable(buffer, rootOffset, 48);
-          final int32ListPropertyParam = const obx_int.Int32ListReader()
-              .vTableGetNullable(buffer, rootOffset, 50);
-          final uint32ListPropertyParam = const obx_int.Uint32ListReader()
-              .vTableGetNullable(buffer, rootOffset, 52);
-          final int64ListPropertyParam = const obx_int.Int64ListReader()
-              .vTableGetNullable(buffer, rootOffset, 54);
-          final object = Category(
-              name: nameParam,
-              description: descriptionParam,
-              iconName: iconNameParam,
-              nonEditableProperty: nonEditablePropertyParam,
-              amountOfItems: amountOfItemsParam,
-              doubleProperty: doublePropertyParam,
-              stringListProperty: stringListPropertyParam,
-              intListProperty: intListPropertyParam,
-              doubleListProperty: doubleListPropertyParam,
-              boolProperty: boolPropertyParam,
-              nullableBoolProperty: nullableBoolPropertyParam,
-              optionalDoubleListProperty: optionalDoubleListPropertyParam,
-              nullableAmountOfItems: nullableAmountOfItemsParam,
-              int8ListProperty: int8ListPropertyParam,
-              uint8ListProperty: uint8ListPropertyParam,
-              int16ListProperty: int16ListPropertyParam,
-              uint16ListProperty: uint16ListPropertyParam,
-              int32ListProperty: int32ListPropertyParam,
-              uint32ListProperty: uint32ListPropertyParam,
-              int64ListProperty: int64ListPropertyParam)
-            ..dbId = const fb.Int64Reader().vTableGet(buffer, rootOffset, 16, 0)
-            ..nullableDoubleProperty = const fb.Float64Reader()
-                .vTableGetNullable(buffer, rootOffset, 36)
-            ..nullableStringListProperty = const fb.ListReader<String>(
-                    fb.StringReader(asciiOptimization: true),
-                    lazy: false)
-                .vTableGetNullable(buffer, rootOffset, 38)
-            ..nullableIntListProperty =
-                const fb.ListReader<int>(fb.Int64Reader(), lazy: false)
-                    .vTableGetNullable(buffer, rootOffset, 40);
+              .toList(growable: false),
+        );
+        final intListPropertyOffset = fbb.writeListInt64(
+          object.intListProperty,
+        );
+        final doubleListPropertyOffset = fbb.writeListFloat64(
+          object.doubleListProperty,
+        );
+        final optionalDoubleListPropertyOffset =
+            object.optionalDoubleListProperty == null
+            ? null
+            : fbb.writeListFloat64(object.optionalDoubleListProperty!);
+        final nullableStringListPropertyOffset =
+            object.nullableStringListProperty == null
+            ? null
+            : fbb.writeList(
+                object.nullableStringListProperty!
+                    .map(fbb.writeString)
+                    .toList(growable: false),
+              );
+        final nullableIntListPropertyOffset =
+            object.nullableIntListProperty == null
+            ? null
+            : fbb.writeListInt64(object.nullableIntListProperty!);
+        final int8ListPropertyOffset = object.int8ListProperty == null
+            ? null
+            : fbb.writeListInt8(object.int8ListProperty!);
+        final uint8ListPropertyOffset = object.uint8ListProperty == null
+            ? null
+            : fbb.writeListInt8(object.uint8ListProperty!);
+        final int16ListPropertyOffset = object.int16ListProperty == null
+            ? null
+            : fbb.writeListInt16(object.int16ListProperty!);
+        final uint16ListPropertyOffset = object.uint16ListProperty == null
+            ? null
+            : fbb.writeListInt16(object.uint16ListProperty!);
+        final int32ListPropertyOffset = object.int32ListProperty == null
+            ? null
+            : fbb.writeListInt32(object.int32ListProperty!);
+        final uint32ListPropertyOffset = object.uint32ListProperty == null
+            ? null
+            : fbb.writeListInt32(object.uint32ListProperty!);
+        final int64ListPropertyOffset = object.int64ListProperty == null
+            ? null
+            : fbb.writeListInt64(object.int64ListProperty!);
+        fbb.startTable(29);
+        fbb.addOffset(1, nameOffset);
+        fbb.addOffset(2, descriptionOffset);
+        fbb.addOffset(3, iconNameOffset);
+        fbb.addInt64(6, object.dbId);
+        fbb.addInt64(8, object.amountOfItems);
+        fbb.addInt64(9, object.nonEditableProperty);
+        fbb.addFloat64(10, object.doubleProperty);
+        fbb.addOffset(11, stringListPropertyOffset);
+        fbb.addOffset(12, intListPropertyOffset);
+        fbb.addOffset(13, doubleListPropertyOffset);
+        fbb.addOffset(14, optionalDoubleListPropertyOffset);
+        fbb.addInt64(15, object.nullableAmountOfItems);
+        fbb.addFloat64(16, object.nullableDoubleProperty);
+        fbb.addOffset(17, nullableStringListPropertyOffset);
+        fbb.addOffset(18, nullableIntListPropertyOffset);
+        fbb.addOffset(19, int8ListPropertyOffset);
+        fbb.addOffset(20, uint8ListPropertyOffset);
+        fbb.addOffset(21, int16ListPropertyOffset);
+        fbb.addOffset(22, uint16ListPropertyOffset);
+        fbb.addOffset(23, int32ListPropertyOffset);
+        fbb.addOffset(24, uint32ListPropertyOffset);
+        fbb.addOffset(25, int64ListPropertyOffset);
+        fbb.addBool(26, object.boolProperty);
+        fbb.addBool(27, object.nullableBoolProperty);
+        fbb.finish(fbb.endTable());
+        return object.dbId;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final nameParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final descriptionParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 8);
+        final iconNameParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGetNullable(buffer, rootOffset, 10);
+        final nonEditablePropertyParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          22,
+          0,
+        );
+        final amountOfItemsParam = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          20,
+          0,
+        );
+        final doublePropertyParam = const fb.Float64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          24,
+          0,
+        );
+        final stringListPropertyParam = const fb.ListReader<String>(
+          fb.StringReader(asciiOptimization: true),
+          lazy: false,
+        ).vTableGet(buffer, rootOffset, 26, []);
+        final intListPropertyParam = const fb.ListReader<int>(
+          fb.Int64Reader(),
+          lazy: false,
+        ).vTableGet(buffer, rootOffset, 28, []);
+        final doubleListPropertyParam = const fb.ListReader<double>(
+          fb.Float64Reader(),
+          lazy: false,
+        ).vTableGet(buffer, rootOffset, 30, []);
+        final boolPropertyParam = const fb.BoolReader().vTableGet(
+          buffer,
+          rootOffset,
+          56,
+          false,
+        );
+        final nullableBoolPropertyParam = const fb.BoolReader()
+            .vTableGetNullable(buffer, rootOffset, 58);
+        final optionalDoubleListPropertyParam = const fb.ListReader<double>(
+          fb.Float64Reader(),
+          lazy: false,
+        ).vTableGetNullable(buffer, rootOffset, 32);
+        final nullableAmountOfItemsParam = const fb.Int64Reader()
+            .vTableGetNullable(buffer, rootOffset, 34);
+        final int8ListPropertyParam =
+            const fb.Int8ListReader(
+                  lazy: false,
+                ).vTableGetNullable(buffer, rootOffset, 42)
+                as Int8List?;
+        final uint8ListPropertyParam =
+            const fb.Uint8ListReader(
+                  lazy: false,
+                ).vTableGetNullable(buffer, rootOffset, 44)
+                as Uint8List?;
+        final int16ListPropertyParam = const obx_int.Int16ListReader()
+            .vTableGetNullable(buffer, rootOffset, 46);
+        final uint16ListPropertyParam = const obx_int.Uint16ListReader()
+            .vTableGetNullable(buffer, rootOffset, 48);
+        final int32ListPropertyParam = const obx_int.Int32ListReader()
+            .vTableGetNullable(buffer, rootOffset, 50);
+        final uint32ListPropertyParam = const obx_int.Uint32ListReader()
+            .vTableGetNullable(buffer, rootOffset, 52);
+        final int64ListPropertyParam = const obx_int.Int64ListReader()
+            .vTableGetNullable(buffer, rootOffset, 54);
+        final object =
+            Category(
+                name: nameParam,
+                description: descriptionParam,
+                iconName: iconNameParam,
+                nonEditableProperty: nonEditablePropertyParam,
+                amountOfItems: amountOfItemsParam,
+                doubleProperty: doublePropertyParam,
+                stringListProperty: stringListPropertyParam,
+                intListProperty: intListPropertyParam,
+                doubleListProperty: doubleListPropertyParam,
+                boolProperty: boolPropertyParam,
+                nullableBoolProperty: nullableBoolPropertyParam,
+                optionalDoubleListProperty: optionalDoubleListPropertyParam,
+                nullableAmountOfItems: nullableAmountOfItemsParam,
+                int8ListProperty: int8ListPropertyParam,
+                uint8ListProperty: uint8ListPropertyParam,
+                int16ListProperty: int16ListPropertyParam,
+                uint16ListProperty: uint16ListPropertyParam,
+                int32ListProperty: int32ListPropertyParam,
+                uint32ListProperty: uint32ListPropertyParam,
+                int64ListProperty: int64ListPropertyParam,
+              )
+              ..dbId = const fb.Int64Reader().vTableGet(
+                buffer,
+                rootOffset,
+                16,
+                0,
+              )
+              ..nullableDoubleProperty = const fb.Float64Reader()
+                  .vTableGetNullable(buffer, rootOffset, 36)
+              ..nullableStringListProperty = const fb.ListReader<String>(
+                fb.StringReader(asciiOptimization: true),
+                lazy: false,
+              ).vTableGetNullable(buffer, rootOffset, 38)
+              ..nullableIntListProperty = const fb.ListReader<int>(
+                fb.Int64Reader(),
+                lazy: false,
+              ).vTableGetNullable(buffer, rootOffset, 40);
 
-          return object;
-        }),
+        return object;
+      },
+    ),
     Comment: obx_int.EntityDefinition<Comment>(
-        model: _entities[1],
-        toOneRelations: (Comment object) => [object.author, object.post],
-        toManyRelations: (Comment object) => {},
-        getId: (Comment object) => object.id,
-        setId: (Comment object, int id) {
-          object.id = id;
-        },
-        objectToFB: (Comment object, fb.Builder fbb) {
-          final contentOffset = fbb.writeString(object.content);
-          fbb.startTable(6);
-          fbb.addInt64(0, object.id);
-          fbb.addOffset(1, contentOffset);
-          fbb.addInt64(2, object.createdAt.millisecondsSinceEpoch);
-          fbb.addInt64(3, object.author.targetId);
-          fbb.addInt64(4, object.post.targetId);
-          fbb.finish(fbb.endTable());
-          return object.id;
-        },
-        objectFromFB: (obx.Store store, ByteData fbData) {
-          final buffer = fb.BufferContext(fbData);
-          final rootOffset = buffer.derefObject(0);
-          final contentParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 6, '');
-          final object = Comment(content: contentParam)
-            ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0)
-            ..createdAt = DateTime.fromMillisecondsSinceEpoch(
-                const fb.Int64Reader().vTableGet(buffer, rootOffset, 8, 0));
-          object.author.targetId =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 10, 0);
-          object.author.attach(store);
-          object.post.targetId =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 12, 0);
-          object.post.attach(store);
-          return object;
-        }),
+      model: _entities[1],
+      toOneRelations: (Comment object) => [object.author, object.post],
+      toManyRelations: (Comment object) => {},
+      getId: (Comment object) => object.id,
+      setId: (Comment object, int id) {
+        object.id = id;
+      },
+      objectToFB: (Comment object, fb.Builder fbb) {
+        final contentOffset = fbb.writeString(object.content);
+        fbb.startTable(6);
+        fbb.addInt64(0, object.id);
+        fbb.addOffset(1, contentOffset);
+        fbb.addInt64(2, object.createdAt.millisecondsSinceEpoch);
+        fbb.addInt64(3, object.author.targetId);
+        fbb.addInt64(4, object.post.targetId);
+        fbb.finish(fbb.endTable());
+        return object.id;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final contentParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final object = Comment(content: contentParam)
+          ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0)
+          ..createdAt = DateTime.fromMillisecondsSinceEpoch(
+            const fb.Int64Reader().vTableGet(buffer, rootOffset, 8, 0),
+          );
+        object.author.targetId = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          10,
+          0,
+        );
+        object.author.attach(store);
+        object.post.targetId = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          12,
+          0,
+        );
+        object.post.attach(store);
+        return object;
+      },
+    ),
     Post: obx_int.EntityDefinition<Post>(
-        model: _entities[2],
-        toOneRelations: (Post object) => [object.author],
-        toManyRelations: (Post object) => {
-              obx_int.RelInfo<Comment>.toOneBacklink(
-                      5, object.id, (Comment srcObject) => srcObject.post):
-                  object.comments
-            },
-        getId: (Post object) => object.id,
-        setId: (Post object, int id) {
-          object.id = id;
-        },
-        objectToFB: (Post object, fb.Builder fbb) {
-          final titleOffset = fbb.writeString(object.title);
-          final contentOffset = fbb.writeString(object.content);
-          fbb.startTable(7);
-          fbb.addInt64(0, object.id);
-          fbb.addOffset(1, titleOffset);
-          fbb.addOffset(2, contentOffset);
-          fbb.addInt64(3, object.createdAt.millisecondsSinceEpoch);
-          fbb.addInt64(4, object.updatedAt?.millisecondsSinceEpoch);
-          fbb.addInt64(5, object.author.targetId);
-          fbb.finish(fbb.endTable());
-          return object.id;
-        },
-        objectFromFB: (obx.Store store, ByteData fbData) {
-          final buffer = fb.BufferContext(fbData);
-          final rootOffset = buffer.derefObject(0);
-          final updatedAtValue =
-              const fb.Int64Reader().vTableGetNullable(buffer, rootOffset, 12);
-          final titleParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 6, '');
-          final contentParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 8, '');
-          final object = Post(title: titleParam, content: contentParam)
-            ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0)
-            ..createdAt = DateTime.fromMillisecondsSinceEpoch(
-                const fb.Int64Reader().vTableGet(buffer, rootOffset, 10, 0))
-            ..updatedAt = updatedAtValue == null
-                ? null
-                : DateTime.fromMillisecondsSinceEpoch(updatedAtValue);
-          object.author.targetId =
-              const fb.Int64Reader().vTableGet(buffer, rootOffset, 14, 0);
-          object.author.attach(store);
-          obx_int.InternalToManyAccess.setRelInfo<Post>(
-              object.comments,
-              store,
-              obx_int.RelInfo<Comment>.toOneBacklink(
-                  5, object.id, (Comment srcObject) => srcObject.post));
-          return object;
-        }),
+      model: _entities[2],
+      toOneRelations: (Post object) => [object.author],
+      toManyRelations: (Post object) => {
+        obx_int.RelInfo<Comment>.toOneBacklink(
+          5,
+          object.id,
+          (Comment srcObject) => srcObject.post,
+        ): object.comments,
+      },
+      getId: (Post object) => object.id,
+      setId: (Post object, int id) {
+        object.id = id;
+      },
+      objectToFB: (Post object, fb.Builder fbb) {
+        final titleOffset = fbb.writeString(object.title);
+        final contentOffset = fbb.writeString(object.content);
+        fbb.startTable(7);
+        fbb.addInt64(0, object.id);
+        fbb.addOffset(1, titleOffset);
+        fbb.addOffset(2, contentOffset);
+        fbb.addInt64(3, object.createdAt.millisecondsSinceEpoch);
+        fbb.addInt64(4, object.updatedAt?.millisecondsSinceEpoch);
+        fbb.addInt64(5, object.author.targetId);
+        fbb.finish(fbb.endTable());
+        return object.id;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final updatedAtValue = const fb.Int64Reader().vTableGetNullable(
+          buffer,
+          rootOffset,
+          12,
+        );
+        final titleParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final contentParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 8, '');
+        final object = Post(title: titleParam, content: contentParam)
+          ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0)
+          ..createdAt = DateTime.fromMillisecondsSinceEpoch(
+            const fb.Int64Reader().vTableGet(buffer, rootOffset, 10, 0),
+          )
+          ..updatedAt = updatedAtValue == null
+              ? null
+              : DateTime.fromMillisecondsSinceEpoch(updatedAtValue);
+        object.author.targetId = const fb.Int64Reader().vTableGet(
+          buffer,
+          rootOffset,
+          14,
+          0,
+        );
+        object.author.attach(store);
+        obx_int.InternalToManyAccess.setRelInfo<Post>(
+          object.comments,
+          store,
+          obx_int.RelInfo<Comment>.toOneBacklink(
+            5,
+            object.id,
+            (Comment srcObject) => srcObject.post,
+          ),
+        );
+        return object;
+      },
+    ),
     User: obx_int.EntityDefinition<User>(
-        model: _entities[3],
-        toOneRelations: (User object) => [],
-        toManyRelations: (User object) => {},
-        getId: (User object) => object.id,
-        setId: (User object, int id) {
-          object.id = id;
-        },
-        objectToFB: (User object, fb.Builder fbb) {
-          final emailOffset = fbb.writeString(object.email);
-          final nameOffset = fbb.writeString(object.name);
-          fbb.startTable(4);
-          fbb.addInt64(0, object.id);
-          fbb.addOffset(1, emailOffset);
-          fbb.addOffset(2, nameOffset);
-          fbb.finish(fbb.endTable());
-          return object.id;
-        },
-        objectFromFB: (obx.Store store, ByteData fbData) {
-          final buffer = fb.BufferContext(fbData);
-          final rootOffset = buffer.derefObject(0);
-          final emailParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 6, '');
-          final nameParam = const fb.StringReader(asciiOptimization: true)
-              .vTableGet(buffer, rootOffset, 8, '');
-          final object = User(email: emailParam, name: nameParam)
-            ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
+      model: _entities[3],
+      toOneRelations: (User object) => [],
+      toManyRelations: (User object) => {},
+      getId: (User object) => object.id,
+      setId: (User object, int id) {
+        object.id = id;
+      },
+      objectToFB: (User object, fb.Builder fbb) {
+        final emailOffset = fbb.writeString(object.email);
+        final nameOffset = fbb.writeString(object.name);
+        fbb.startTable(4);
+        fbb.addInt64(0, object.id);
+        fbb.addOffset(1, emailOffset);
+        fbb.addOffset(2, nameOffset);
+        fbb.finish(fbb.endTable());
+        return object.id;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final emailParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final nameParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 8, '');
+        final object = User(email: emailParam, name: nameParam)
+          ..id = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
 
-          return object;
-        })
+        return object;
+      },
+    ),
   };
 
   return obx_int.ModelDefinition(model, bindings);
@@ -608,56 +729,68 @@ obx_int.ModelDefinition getObjectBoxModel() {
 /// [Category] entity fields to define ObjectBox queries.
 class Category_ {
   /// See [Category.name].
-  static final name =
-      obx.QueryStringProperty<Category>(_entities[0].properties[0]);
+  static final name = obx.QueryStringProperty<Category>(
+    _entities[0].properties[0],
+  );
 
   /// See [Category.description].
-  static final description =
-      obx.QueryStringProperty<Category>(_entities[0].properties[1]);
+  static final description = obx.QueryStringProperty<Category>(
+    _entities[0].properties[1],
+  );
 
   /// See [Category.iconName].
-  static final iconName =
-      obx.QueryStringProperty<Category>(_entities[0].properties[2]);
+  static final iconName = obx.QueryStringProperty<Category>(
+    _entities[0].properties[2],
+  );
 
   /// See [Category.dbId].
-  static final dbId =
-      obx.QueryIntegerProperty<Category>(_entities[0].properties[3]);
+  static final dbId = obx.QueryIntegerProperty<Category>(
+    _entities[0].properties[3],
+  );
 
   /// See [Category.amountOfItems].
-  static final amountOfItems =
-      obx.QueryIntegerProperty<Category>(_entities[0].properties[4]);
+  static final amountOfItems = obx.QueryIntegerProperty<Category>(
+    _entities[0].properties[4],
+  );
 
   /// See [Category.nonEditableProperty].
-  static final nonEditableProperty =
-      obx.QueryIntegerProperty<Category>(_entities[0].properties[5]);
+  static final nonEditableProperty = obx.QueryIntegerProperty<Category>(
+    _entities[0].properties[5],
+  );
 
   /// See [Category.doubleProperty].
-  static final doubleProperty =
-      obx.QueryDoubleProperty<Category>(_entities[0].properties[6]);
+  static final doubleProperty = obx.QueryDoubleProperty<Category>(
+    _entities[0].properties[6],
+  );
 
   /// See [Category.stringListProperty].
-  static final stringListProperty =
-      obx.QueryStringVectorProperty<Category>(_entities[0].properties[7]);
+  static final stringListProperty = obx.QueryStringVectorProperty<Category>(
+    _entities[0].properties[7],
+  );
 
   /// See [Category.intListProperty].
-  static final intListProperty =
-      obx.QueryIntegerVectorProperty<Category>(_entities[0].properties[8]);
+  static final intListProperty = obx.QueryIntegerVectorProperty<Category>(
+    _entities[0].properties[8],
+  );
 
   /// See [Category.doubleListProperty].
-  static final doubleListProperty =
-      obx.QueryDoubleVectorProperty<Category>(_entities[0].properties[9]);
+  static final doubleListProperty = obx.QueryDoubleVectorProperty<Category>(
+    _entities[0].properties[9],
+  );
 
   /// See [Category.optionalDoubleListProperty].
   static final optionalDoubleListProperty =
       obx.QueryDoubleVectorProperty<Category>(_entities[0].properties[10]);
 
   /// See [Category.nullableAmountOfItems].
-  static final nullableAmountOfItems =
-      obx.QueryIntegerProperty<Category>(_entities[0].properties[11]);
+  static final nullableAmountOfItems = obx.QueryIntegerProperty<Category>(
+    _entities[0].properties[11],
+  );
 
   /// See [Category.nullableDoubleProperty].
-  static final nullableDoubleProperty =
-      obx.QueryDoubleProperty<Category>(_entities[0].properties[12]);
+  static final nullableDoubleProperty = obx.QueryDoubleProperty<Category>(
+    _entities[0].properties[12],
+  );
 
   /// See [Category.nullableStringListProperty].
   static final nullableStringListProperty =
@@ -668,63 +801,77 @@ class Category_ {
       obx.QueryIntegerVectorProperty<Category>(_entities[0].properties[14]);
 
   /// See [Category.int8ListProperty].
-  static final int8ListProperty =
-      obx.QueryByteVectorProperty<Category>(_entities[0].properties[15]);
+  static final int8ListProperty = obx.QueryByteVectorProperty<Category>(
+    _entities[0].properties[15],
+  );
 
   /// See [Category.uint8ListProperty].
-  static final uint8ListProperty =
-      obx.QueryByteVectorProperty<Category>(_entities[0].properties[16]);
+  static final uint8ListProperty = obx.QueryByteVectorProperty<Category>(
+    _entities[0].properties[16],
+  );
 
   /// See [Category.int16ListProperty].
-  static final int16ListProperty =
-      obx.QueryIntegerVectorProperty<Category>(_entities[0].properties[17]);
+  static final int16ListProperty = obx.QueryIntegerVectorProperty<Category>(
+    _entities[0].properties[17],
+  );
 
   /// See [Category.uint16ListProperty].
-  static final uint16ListProperty =
-      obx.QueryIntegerVectorProperty<Category>(_entities[0].properties[18]);
+  static final uint16ListProperty = obx.QueryIntegerVectorProperty<Category>(
+    _entities[0].properties[18],
+  );
 
   /// See [Category.int32ListProperty].
-  static final int32ListProperty =
-      obx.QueryIntegerVectorProperty<Category>(_entities[0].properties[19]);
+  static final int32ListProperty = obx.QueryIntegerVectorProperty<Category>(
+    _entities[0].properties[19],
+  );
 
   /// See [Category.uint32ListProperty].
-  static final uint32ListProperty =
-      obx.QueryIntegerVectorProperty<Category>(_entities[0].properties[20]);
+  static final uint32ListProperty = obx.QueryIntegerVectorProperty<Category>(
+    _entities[0].properties[20],
+  );
 
   /// See [Category.int64ListProperty].
-  static final int64ListProperty =
-      obx.QueryIntegerVectorProperty<Category>(_entities[0].properties[21]);
+  static final int64ListProperty = obx.QueryIntegerVectorProperty<Category>(
+    _entities[0].properties[21],
+  );
 
   /// See [Category.boolProperty].
-  static final boolProperty =
-      obx.QueryBooleanProperty<Category>(_entities[0].properties[22]);
+  static final boolProperty = obx.QueryBooleanProperty<Category>(
+    _entities[0].properties[22],
+  );
 
   /// See [Category.nullableBoolProperty].
-  static final nullableBoolProperty =
-      obx.QueryBooleanProperty<Category>(_entities[0].properties[23]);
+  static final nullableBoolProperty = obx.QueryBooleanProperty<Category>(
+    _entities[0].properties[23],
+  );
 }
 
 /// [Comment] entity fields to define ObjectBox queries.
 class Comment_ {
   /// See [Comment.id].
-  static final id =
-      obx.QueryIntegerProperty<Comment>(_entities[1].properties[0]);
+  static final id = obx.QueryIntegerProperty<Comment>(
+    _entities[1].properties[0],
+  );
 
   /// See [Comment.content].
-  static final content =
-      obx.QueryStringProperty<Comment>(_entities[1].properties[1]);
+  static final content = obx.QueryStringProperty<Comment>(
+    _entities[1].properties[1],
+  );
 
   /// See [Comment.createdAt].
-  static final createdAt =
-      obx.QueryDateProperty<Comment>(_entities[1].properties[2]);
+  static final createdAt = obx.QueryDateProperty<Comment>(
+    _entities[1].properties[2],
+  );
 
   /// See [Comment.author].
-  static final author =
-      obx.QueryRelationToOne<Comment, User>(_entities[1].properties[3]);
+  static final author = obx.QueryRelationToOne<Comment, User>(
+    _entities[1].properties[3],
+  );
 
   /// See [Comment.post].
-  static final post =
-      obx.QueryRelationToOne<Comment, Post>(_entities[1].properties[4]);
+  static final post = obx.QueryRelationToOne<Comment, Post>(
+    _entities[1].properties[4],
+  );
 }
 
 /// [Post] entity fields to define ObjectBox queries.
@@ -733,24 +880,29 @@ class Post_ {
   static final id = obx.QueryIntegerProperty<Post>(_entities[2].properties[0]);
 
   /// See [Post.title].
-  static final title =
-      obx.QueryStringProperty<Post>(_entities[2].properties[1]);
+  static final title = obx.QueryStringProperty<Post>(
+    _entities[2].properties[1],
+  );
 
   /// See [Post.content].
-  static final content =
-      obx.QueryStringProperty<Post>(_entities[2].properties[2]);
+  static final content = obx.QueryStringProperty<Post>(
+    _entities[2].properties[2],
+  );
 
   /// See [Post.createdAt].
-  static final createdAt =
-      obx.QueryDateProperty<Post>(_entities[2].properties[3]);
+  static final createdAt = obx.QueryDateProperty<Post>(
+    _entities[2].properties[3],
+  );
 
   /// See [Post.updatedAt].
-  static final updatedAt =
-      obx.QueryDateProperty<Post>(_entities[2].properties[4]);
+  static final updatedAt = obx.QueryDateProperty<Post>(
+    _entities[2].properties[4],
+  );
 
   /// See [Post.author].
-  static final author =
-      obx.QueryRelationToOne<Post, User>(_entities[2].properties[5]);
+  static final author = obx.QueryRelationToOne<Post, User>(
+    _entities[2].properties[5],
+  );
 
   /// see [Post.comments]
   static final comments = obx.QueryBacklinkToMany<Comment, Post>(Comment_.post);
@@ -762,8 +914,9 @@ class User_ {
   static final id = obx.QueryIntegerProperty<User>(_entities[3].properties[0]);
 
   /// See [User.email].
-  static final email =
-      obx.QueryStringProperty<User>(_entities[3].properties[1]);
+  static final email = obx.QueryStringProperty<User>(
+    _entities[3].properties[1],
+  );
 
   /// See [User.name].
   static final name = obx.QueryStringProperty<User>(_entities[3].properties[2]);

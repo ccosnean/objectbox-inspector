@@ -7,17 +7,12 @@ import 'package:flutter/material.dart';
 class PostPage extends StatelessWidget {
   final int postId;
 
-  const PostPage({
-    super.key,
-    required this.postId,
-  });
+  const PostPage({super.key, required this.postId});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Post Details'),
-      ),
+      appBar: AppBar(title: const Text('Post Details')),
       body: FutureBuilder(
         future: _loadPostData(),
         builder: (context, snapshot) {
@@ -45,10 +40,7 @@ class PostPage extends StatelessWidget {
                 const SizedBox(height: 24),
                 const Text(
                   'Comments',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 16),
                 _CommentsList(comments: comments),
@@ -65,11 +57,7 @@ class PostPage extends StatelessWidget {
     final user = Repos.instance.users.getById(post!.author.targetId);
     final comments = Repos.instance.comments.getByPostId(postId);
 
-    return {
-      'post': post,
-      'user': user,
-      'comments': comments,
-    };
+    return {'post': post, 'user': user, 'comments': comments};
   }
 }
 
@@ -77,10 +65,7 @@ class _PostHeader extends StatelessWidget {
   final Post post;
   final User user;
 
-  const _PostHeader({
-    required this.post,
-    required this.user,
-  });
+  const _PostHeader({required this.post, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -90,21 +75,13 @@ class _PostHeader extends StatelessWidget {
       children: [
         Row(
           children: [
-            CircleAvatar(
-              child: Text(user.name[0]),
-            ),
+            CircleAvatar(child: Text(user.name[0])),
             const SizedBox(width: 8),
-            Text(
-              user.name,
-              style: tt.titleMedium,
-            ),
+            Text(user.name, style: tt.titleMedium),
           ],
         ),
         const SizedBox(height: 20),
-        Text(
-          post.title,
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
+        Text(post.title, style: Theme.of(context).textTheme.titleLarge),
       ],
     );
   }
@@ -113,25 +90,18 @@ class _PostHeader extends StatelessWidget {
 class _PostContent extends StatelessWidget {
   final Post post;
 
-  const _PostContent({
-    required this.post,
-  });
+  const _PostContent({required this.post});
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      post.content,
-      style: Theme.of(context).textTheme.bodyLarge,
-    );
+    return Text(post.content, style: Theme.of(context).textTheme.bodyLarge);
   }
 }
 
 class _CommentsList extends StatelessWidget {
   final List<Comment> comments;
 
-  const _CommentsList({
-    required this.comments,
-  });
+  const _CommentsList({required this.comments});
 
   @override
   Widget build(BuildContext context) {
@@ -151,16 +121,11 @@ class _CommentsList extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  CircleAvatar(
-                    radius: 12,
-                    child: Text(user.name[0]),
-                  ),
+                  CircleAvatar(radius: 12, child: Text(user.name[0])),
                   const SizedBox(width: 8),
                   Text(
                     user.name,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ],
               ),

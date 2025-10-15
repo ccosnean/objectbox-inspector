@@ -9,10 +9,7 @@ class User {
 
   String name;
 
-  User({
-    required this.email,
-    required this.name,
-  }) : id = 0;
+  User({required this.email, required this.name}) : id = 0;
 
   @override
   String toString() => name;

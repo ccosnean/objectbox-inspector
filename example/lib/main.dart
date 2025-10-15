@@ -12,13 +12,9 @@ void main() async {
   runApp(const ExampleApp());
 }
 
-final lightTheme = ThemeData.light(
-  useMaterial3: true,
-);
+final lightTheme = ThemeData.light(useMaterial3: true);
 
-final darkTheme = ThemeData.dark(
-  useMaterial3: true,
-);
+final darkTheme = ThemeData.dark(useMaterial3: true);
 
 class ExampleApp extends StatelessWidget {
   const ExampleApp({super.key});

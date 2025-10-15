@@ -1,32 +1,30 @@
 name: example
-description: "A new Flutter project."
+description: "The example project for objectbox_inspector."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.1.0
+  sdk: '>=3.8.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  objectbox: ^4.3.0
+  objectbox: ^5.0.0
   path_provider: ^2.1.2
   path: ^1.8.3
-  objectbox_flutter_libs:
-  freezed_annotation:
-  json_annotation:
+  objectbox_flutter_libs: ^5.0.0
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.9.0
   objectbox_inspector:
     path: ../objectbox_inspector/
-  # objectbox_inspector: ^0.0.6
 
 dev_dependencies:
-  freezed:
-  json_serializable:
+  freezed: ^3.2.3
+  json_serializable: ^6.11.1
   flutter_lints: ^4.0.0
   build_runner: ^2.4.9
-  objectbox_generator: ^4.3.0
-  # objectbox_inspector_generator: ^0.0.6
+  objectbox_generator: ^5.0.0
   objectbox_inspector_generator:
     path: ../objectbox_inspector_generator/
 

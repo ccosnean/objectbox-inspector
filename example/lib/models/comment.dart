@@ -17,8 +17,5 @@ class Comment {
   // Relation to Post (many-to-one)
   final post = ToOne<Post>();
 
-  Comment({
-    required this.content,
-  })  : id = 0,
-        createdAt = DateTime.now();
+  Comment({required this.content}) : id = 0, createdAt = DateTime.now();
 }
