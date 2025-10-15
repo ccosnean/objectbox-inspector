@@ -6,12 +6,8 @@ part of 'freezed_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FreezedModelImpl _$$FreezedModelImplFromJson(Map<String, dynamic> json) =>
-    _$FreezedModelImpl(
-      name: json['name'] as String,
-    );
+_FreezedModel _$FreezedModelFromJson(Map<String, dynamic> json) =>
+    _FreezedModel(name: json['name'] as String);
 
-Map<String, dynamic> _$$FreezedModelImplToJson(_$FreezedModelImpl instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-    };
+Map<String, dynamic> _$FreezedModelToJson(_FreezedModel instance) =>
+    <String, dynamic>{'name': instance.name};

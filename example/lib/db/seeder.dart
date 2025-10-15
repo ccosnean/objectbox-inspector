@@ -54,26 +54,11 @@ class DatabaseSeeder {
 
   static Future<void> _seedUsers() async {
     final users = [
-      User(
-        email: 'john@example.com',
-        name: 'John Doe',
-      ),
-      User(
-        email: 'jane@example.com',
-        name: 'Jane Smith',
-      ),
-      User(
-        email: 'mike@example.com',
-        name: 'Mike Wilson',
-      ),
-      User(
-        email: 'sarah@example.com',
-        name: 'Sarah Parker',
-      ),
-      User(
-        email: 'alex@example.com',
-        name: 'Alex Turner',
-      ),
+      User(email: 'john@example.com', name: 'John Doe'),
+      User(email: 'jane@example.com', name: 'Jane Smith'),
+      User(email: 'mike@example.com', name: 'Mike Wilson'),
+      User(email: 'sarah@example.com', name: 'Sarah Parker'),
+      User(email: 'alex@example.com', name: 'Alex Turner'),
     ];
 
     for (var user in users) {
@@ -156,8 +141,9 @@ class DatabaseSeeder {
 
       for (var i = 0; i < numberOfComments; i++) {
         final comment = Comment(
-          content: commentTexts[((post.id + i) * 7) %
-              commentTexts.length], // Pseudo-random selection
+          content:
+              commentTexts[((post.id + i) * 7) %
+                  commentTexts.length], // Pseudo-random selection
         );
 
         // Assign a random user as the author
