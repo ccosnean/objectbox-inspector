@@ -1,3 +1,7 @@
+## 2.0.0
+
+* Sync with objectbox 5.0.0
+
 ## 1.0.8
 
 * Improves GitHub Actions testing workflow.
