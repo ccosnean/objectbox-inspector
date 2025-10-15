@@ -1,3 +1,7 @@
+## 2.0.1
+
+* Re-release on pub.dev (no code changes).
+
 ## 2.0.0
 
 * Sync with objectbox 5.0.0
