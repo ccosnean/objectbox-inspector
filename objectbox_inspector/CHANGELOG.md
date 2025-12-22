@@ -1,3 +1,7 @@
+## 2.1.0
+
+* Bumps versions to latest.
+
 ## 2.0.1
 
 * Re-release on pub.dev (no code changes).
