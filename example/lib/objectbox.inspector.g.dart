@@ -5,6 +5,7 @@ import 'package:objectbox_inspector/objectbox_inspector.dart';
 import 'models/category.dart';
 import 'models/comment.dart';
 import 'models/post.dart';
+import 'models/shape.dart';
 import 'models/user.dart';
 import 'dart:typed_data';
 
@@ -13,6 +14,7 @@ List<InspectableBox> getInspectableBoxes(Store store) {
     buildCategoryInspectableBox(store),
     buildCommentInspectableBox(store),
     buildPostInspectableBox(store),
+    buildShapeInspectableBox(store),
     buildUserInspectableBox(store),
   ];
 }
@@ -352,6 +354,36 @@ InspectableBox buildPostInspectableBox(Store store) {
 
   return InspectableBox(
     boxName: 'Post',
+    maxEntities: box.count(),
+    entityGetter: () => entities,
+  );
+}
+
+InspectableBox buildShapeInspectableBox(Store store) {
+  final box = store.box<Shape>();
+  final allEntities = box.getAll();
+  final entities = allEntities
+      .map(
+        (entity) => InspectableEntity(
+          id: entity.dbId,
+          properties: [
+            InspectableProperty<int>(name: 'dbId', value: entity.dbId),
+            InspectableProperty<String>(
+              name: 'name',
+              value: entity.name,
+
+              onChanged: (value) {
+                entity.name = value;
+                box.put(entity);
+              },
+            ),
+          ],
+        ),
+      )
+      .toList();
+
+  return InspectableBox(
+    boxName: 'Shape',
     maxEntities: box.count(),
     entityGetter: () => entities,
   );

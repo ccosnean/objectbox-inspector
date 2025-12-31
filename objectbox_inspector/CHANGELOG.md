@@ -1,3 +1,7 @@
+## 2.1.1
+
+* Fix crash when the box is empty.
+
 ## 2.1.0
 
 * Bumps versions to latest.

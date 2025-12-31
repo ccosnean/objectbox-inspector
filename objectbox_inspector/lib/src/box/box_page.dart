@@ -22,11 +22,7 @@ import 'package:objectbox_inspector/src/models/search/inspectable_query.dart';
 class BoxPage extends StatefulWidget {
   final InspectableBox box;
   final List<int> selectedIds;
-  const BoxPage({
-    super.key,
-    required this.box,
-    this.selectedIds = const [],
-  });
+  const BoxPage({super.key, required this.box, this.selectedIds = const []});
 
   @override
   State<BoxPage> createState() => _BoxPageState();
@@ -45,7 +41,7 @@ class _BoxPageState extends State<BoxPage> {
     super.initState();
 
     properties.addAll(
-      widget.box.entityGetter.call().first.properties,
+      widget.box.entityGetter.call().firstOrNull?.properties ?? [],
     );
   }
 
@@ -61,8 +57,9 @@ class _BoxPageState extends State<BoxPage> {
 
     if (widget.selectedIds.isNotEmpty && !autoScrolled) {
       final firstSelectedId = widget.selectedIds.first;
-      final selectedIdIndex =
-          entities.indexWhere((e) => e.id == firstSelectedId);
+      final selectedIdIndex = entities.indexWhere(
+        (e) => e.id == firstSelectedId,
+      );
 
       WidgetsBinding.instance.waitUntilFirstFrameRasterized.then((_) async {
         final totalHeight = controller.position.maxScrollExtent;
@@ -111,9 +108,7 @@ class _BoxPageState extends State<BoxPage> {
       appBar: AppBar(
         title: Text(
           widget.box.boxName,
-          style: tt.titleLarge?.copyWith(
-            fontWeight: FontWeight.w500,
-          ),
+          style: tt.titleLarge?.copyWith(fontWeight: FontWeight.w500),
         ),
         backgroundColor: cs.surface,
         actions: [
@@ -124,55 +119,55 @@ class _BoxPageState extends State<BoxPage> {
                 onPressed: () {
                   _scaffoldKey.currentState?.openEndDrawer();
                 },
-                icon: query.conditions.isNotEmpty
-                    ? Container(
-                        decoration: BoxDecoration(
-                          color: cs.primaryContainer,
-                          borderRadius: BorderRadius.circular(100),
-                        ),
-                        child: AspectRatio(
-                          aspectRatio: 1,
-                          child: Center(
-                            child: Text(
-                              query.conditions.length.toString(),
-                              style: tt.bodyLarge?.copyWith(
-                                fontWeight: FontWeight.w500,
-                                color: cs.primary,
+                icon:
+                    query.conditions.isNotEmpty
+                        ? Container(
+                          decoration: BoxDecoration(
+                            color: cs.primaryContainer,
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          child: AspectRatio(
+                            aspectRatio: 1,
+                            child: Center(
+                              child: Text(
+                                query.conditions.length.toString(),
+                                style: tt.bodyLarge?.copyWith(
+                                  fontWeight: FontWeight.w500,
+                                  color: cs.primary,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      )
-                    : const Icon(Icons.search),
+                        )
+                        : const Icon(Icons.search),
               ),
             ),
         ],
       ),
-      endDrawer: entities.isNotEmpty || query.conditions.isNotEmpty
-          ? SearchPage(
-              args: SearchPageArgs(
-                properties: properties,
-                query: query,
-                onQueryChanged: _onQueryChanged,
-              ),
-            )
-          : null,
-      body: ListView.builder(
-        controller: controller,
-        padding: EdgeInsets.only(
-          bottom: mq.viewPadding.bottom + 20,
-        ),
-        itemBuilder: (context, index) {
-          final entity = entities[index];
-          final isSelected = widget.selectedIds.contains(entity.id);
+      endDrawer:
+          entities.isNotEmpty || query.conditions.isNotEmpty
+              ? SearchPage(
+                args: SearchPageArgs(
+                  properties: properties,
+                  query: query,
+                  onQueryChanged: _onQueryChanged,
+                ),
+              )
+              : null,
+      body:
+          entities.isEmpty
+              ? const Center(child: Text('No entities found'))
+              : ListView.builder(
+                controller: controller,
+                padding: EdgeInsets.only(bottom: mq.viewPadding.bottom + 20),
+                itemBuilder: (context, index) {
+                  final entity = entities[index];
+                  final isSelected = widget.selectedIds.contains(entity.id);
 
-          return EntityListTile(
-            entity: entity,
-            isSelected: isSelected,
-          );
-        },
-        itemCount: entities.length,
-      ),
+                  return EntityListTile(entity: entity, isSelected: isSelected);
+                },
+                itemCount: entities.length,
+              ),
     );
   }
 }

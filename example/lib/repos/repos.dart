@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'package:example/objectbox.g.dart';
+import 'package:example/repos/shapes_repository.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
 
@@ -18,6 +19,7 @@ class Repos {
   late final CommentRepository comments;
   late final CategoryRepository categories;
   late final UserRepository users;
+  late final ShapesRepository shapes;
 
   // Private constructor
   Repos._();
@@ -41,6 +43,7 @@ class Repos {
     _instance!.comments = CommentRepository(_instance!.store);
     _instance!.categories = CategoryRepository(_instance!.store);
     _instance!.users = UserRepository(_instance!.store);
+    _instance!.shapes = ShapesRepository(_instance!.store);
 
     return _instance!;
   }

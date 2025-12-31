@@ -21,6 +21,7 @@ class DatabaseSeeder {
     await _seedUsers();
     await _seedPosts();
     await _seedComments();
+    await _seedShapes();
   }
 
   static Future<void> _seedCategories() async {
@@ -152,6 +153,15 @@ class DatabaseSeeder {
 
         Repos.instance.comments.create(comment);
       }
+    }
+  }
+
+  static Future<void> _seedShapes() async {
+    // keep empty to test empty box case.
+    final shapes = [];
+
+    for (var shape in shapes) {
+      Repos.instance.shapes.create(shape);
     }
   }
 }

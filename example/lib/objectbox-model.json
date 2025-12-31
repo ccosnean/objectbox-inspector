@@ -239,9 +239,28 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "5:7211387736415750871",
+      "lastPropertyId": "2:5671509900097940061",
+      "name": "Shape",
+      "properties": [
+        {
+          "id": "1:8568616530224400513",
+          "name": "dbId",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5671509900097940061",
+          "name": "name",
+          "type": 9
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "4:2087573786649227116",
+  "lastEntityId": "5:7211387736415750871",
   "lastIndexId": "5:2293397364878150452",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",

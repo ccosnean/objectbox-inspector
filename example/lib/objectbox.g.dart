@@ -17,6 +17,7 @@ import 'package:objectbox_flutter_libs/objectbox_flutter_libs.dart';
 import 'models/category.dart';
 import 'models/comment.dart';
 import 'models/post.dart';
+import 'models/shape.dart';
 import 'models/user.dart';
 
 export 'package:objectbox/objectbox.dart'; // so that callers only have to import this file
@@ -306,6 +307,28 @@ final _entities = <obx_int.ModelEntity>[
     relations: <obx_int.ModelRelation>[],
     backlinks: <obx_int.ModelBacklink>[],
   ),
+  obx_int.ModelEntity(
+    id: const obx_int.IdUid(5, 7211387736415750871),
+    name: 'Shape',
+    lastPropertyId: const obx_int.IdUid(2, 5671509900097940061),
+    flags: 0,
+    properties: <obx_int.ModelProperty>[
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(1, 8568616530224400513),
+        name: 'dbId',
+        type: 6,
+        flags: 1,
+      ),
+      obx_int.ModelProperty(
+        id: const obx_int.IdUid(2, 5671509900097940061),
+        name: 'name',
+        type: 9,
+        flags: 0,
+      ),
+    ],
+    relations: <obx_int.ModelRelation>[],
+    backlinks: <obx_int.ModelBacklink>[],
+  ),
 ];
 
 /// Shortcut for [obx.Store.new] that passes [getObjectBoxModel] and for Flutter
@@ -351,7 +374,7 @@ obx_int.ModelDefinition getObjectBoxModel() {
     // Typically, this is done with `dart run build_runner build`.
     generatorVersion: obx_int.GeneratorVersion.v2025_12_16,
     entities: _entities,
-    lastEntityId: const obx_int.IdUid(4, 2087573786649227116),
+    lastEntityId: const obx_int.IdUid(5, 7211387736415750871),
     lastIndexId: const obx_int.IdUid(5, 2293397364878150452),
     lastRelationId: const obx_int.IdUid(0, 0),
     lastSequenceId: const obx_int.IdUid(0, 0),
@@ -729,6 +752,34 @@ obx_int.ModelDefinition getObjectBoxModel() {
         return object;
       },
     ),
+    Shape: obx_int.EntityDefinition<Shape>(
+      model: _entities[4],
+      toOneRelations: (Shape object) => [],
+      toManyRelations: (Shape object) => {},
+      getId: (Shape object) => object.dbId,
+      setId: (Shape object, int id) {
+        object.dbId = id;
+      },
+      objectToFB: (Shape object, fb.Builder fbb) {
+        final nameOffset = fbb.writeString(object.name);
+        fbb.startTable(3);
+        fbb.addInt64(0, object.dbId);
+        fbb.addOffset(1, nameOffset);
+        fbb.finish(fbb.endTable());
+        return object.dbId;
+      },
+      objectFromFB: (obx.Store store, ByteData fbData) {
+        final buffer = fb.BufferContext(fbData);
+        final rootOffset = buffer.derefObject(0);
+        final nameParam = const fb.StringReader(
+          asciiOptimization: true,
+        ).vTableGet(buffer, rootOffset, 6, '');
+        final object = Shape(name: nameParam)
+          ..dbId = const fb.Int64Reader().vTableGet(buffer, rootOffset, 4, 0);
+
+        return object;
+      },
+    ),
   };
 
   return obx_int.ModelDefinition(model, bindings);
@@ -928,4 +979,17 @@ class User_ {
 
   /// See [User.name].
   static final name = obx.QueryStringProperty<User>(_entities[3].properties[2]);
+}
+
+/// [Shape] entity fields to define ObjectBox queries.
+class Shape_ {
+  /// See [Shape.dbId].
+  static final dbId = obx.QueryIntegerProperty<Shape>(
+    _entities[4].properties[0],
+  );
+
+  /// See [Shape.name].
+  static final name = obx.QueryStringProperty<Shape>(
+    _entities[4].properties[1],
+  );
 }
