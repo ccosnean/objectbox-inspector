@@ -1,3 +1,7 @@
+## 2.1.2
+
+* Bumps ObjectBox dependencies to 5.3.1.
+
 ## 2.1.1
 
 * Fix crash when the box is empty.
