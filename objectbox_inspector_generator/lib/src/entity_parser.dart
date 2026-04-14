@@ -2,7 +2,6 @@
 
 import 'dart:async';
 
-import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
 import 'package:objectbox/objectbox.dart';
 import 'package:objectbox_inspector_generator/src/code_storage.dart';
@@ -26,9 +25,9 @@ class EntityParser extends Builder {
     final annotatedElements = libReader.annotatedWith(_entityChecker);
 
     for (final annotation in annotatedElements) {
-      final classElement = annotation.element as ClassElement;
-      final name = classElement.name;
-      final fields = classElement.fields;
+      final classElement = annotation.element as dynamic;
+      final name = _className(classElement);
+      final fields = _classFields(classElement);
       final segments = buildStep.inputId.pathSegments;
       final filePath = segments.sublist(1).join('/');
 
@@ -44,7 +43,7 @@ class EntityParser extends Builder {
     }
   }
 
-  String _buildInspectableBox(String name, List<FieldElement> fields) {
+  String _buildInspectableBox(String name, List<dynamic> fields) {
     final buffer = StringBuffer();
 
     buffer.writeln("InspectableBox build${name}InspectableBox(Store store) {");
@@ -57,7 +56,7 @@ class EntityParser extends Builder {
       // (Element2 vs Element). Using dynamic keeps compatibility.
       final fieldForChecker = field as dynamic;
       if (_idChecker.annotationsOfExact(fieldForChecker).isNotEmpty) {
-        idName = field.name;
+        idName = _fieldName(field);
       }
     }
 
@@ -76,12 +75,12 @@ class EntityParser extends Builder {
       final fieldForChecker = field as dynamic;
       if (_transientChecker.annotationsOfExact(fieldForChecker).isNotEmpty) {
         log.info(
-          " Skipping property '${field.name}': annotated with @Transient.",
+          " Skipping property '${_fieldName(field)}': annotated with @Transient.",
         );
         continue;
       }
 
-      final type = field.type.getDisplayString(
+      final type = _fieldType(field).getDisplayString(
         // ignore:deprecated_member_use
         withNullability: true,
       );
@@ -89,31 +88,31 @@ class EntityParser extends Builder {
         final runtimeType = type.replaceAll("ToOne<", "").replaceAll(">", "");
         buffer.writeln('''
           InspectableProperty(
-            name: '${field.name}',
-            toOneRelation: ToOneRelation<$runtimeType>(rel: entity.${field.name}),
+            name: '${_fieldName(field)}',
+            toOneRelation: ToOneRelation<$runtimeType>(rel: entity.${_fieldName(field)}),
           ),
         ''');
       } else if (type.contains('ToMany')) {
         final runtimeType = type.replaceAll("ToMany<", "").replaceAll(">", "");
         buffer.writeln('''
           InspectableProperty(
-            name: '${field.name}',
+            name: '${_fieldName(field)}',
             toManyRelation: ToManyRelation<$runtimeType>(
-              rel: entity.${field.name},
-              ids: entity.${field.name}.map((e) => e.$idName).toList(),
+              rel: entity.${_fieldName(field)},
+              ids: entity.${_fieldName(field)}.map((e) => e.$idName).toList(),
             ),
           ),
         ''');
       } else {
         buffer.writeln('''
         InspectableProperty<$type>(
-          name: '${field.name}',
-          value: entity.${field.name},
+          name: '${_fieldName(field)}',
+          value: entity.${_fieldName(field)},
       ''');
-        if (field.name != idName && !field.isFinal) {
+        if (_fieldName(field) != idName && !_fieldIsFinal(field)) {
           buffer.writeln('''
         onChanged: (value) {
-          entity.${field.name} = value;
+          entity.${_fieldName(field)} = value;
           box.put(entity);
         },
       ''');
@@ -141,6 +140,34 @@ class EntityParser extends Builder {
 
     return buffer.toString();
   }
+
+  String _className(dynamic classElement) {
+    try {
+      return classElement.name3 as String;
+    } catch (_) {
+      return classElement.name as String;
+    }
+  }
+
+  List<dynamic> _classFields(dynamic classElement) {
+    try {
+      return (classElement.fields2 as List).cast<dynamic>();
+    } catch (_) {
+      return (classElement.fields as List).cast<dynamic>();
+    }
+  }
+
+  String _fieldName(dynamic field) {
+    try {
+      return field.name3 as String;
+    } catch (_) {
+      return field.name as String;
+    }
+  }
+
+  dynamic _fieldType(dynamic field) => field.type;
+
+  bool _fieldIsFinal(dynamic field) => field.isFinal as bool;
 
   @override
   late final buildExtensions = {
