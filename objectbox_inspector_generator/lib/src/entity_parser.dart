@@ -2,7 +2,7 @@
 
 import 'dart:async';
 
-import 'package:analyzer/dart/element/element2.dart';
+import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
 import 'package:objectbox/objectbox.dart';
 import 'package:objectbox_inspector_generator/src/code_storage.dart';
@@ -26,9 +26,9 @@ class EntityParser extends Builder {
     final annotatedElements = libReader.annotatedWith(_entityChecker);
 
     for (final annotation in annotatedElements) {
-      final classElement = annotation.element as ClassElement2;
-      final name = classElement.name3!;
-      final fields = classElement.fields2;
+      final classElement = annotation.element as ClassElement;
+      final name = classElement.name;
+      final fields = classElement.fields;
       final segments = buildStep.inputId.pathSegments;
       final filePath = segments.sublist(1).join('/');
 
@@ -44,7 +44,7 @@ class EntityParser extends Builder {
     }
   }
 
-  String _buildInspectableBox(String name, List<FieldElement2> fields) {
+  String _buildInspectableBox(String name, List<FieldElement> fields) {
     final buffer = StringBuffer();
 
     buffer.writeln("InspectableBox build${name}InspectableBox(Store store) {");
@@ -53,8 +53,11 @@ class EntityParser extends Builder {
 
     var idName = "id";
     for (final field in fields) {
-      if (_idChecker.annotationsOfExact(field).isNotEmpty) {
-        idName = field.name3!;
+      // `source_gen` changed TypeChecker APIs between major versions
+      // (Element2 vs Element). Using dynamic keeps compatibility.
+      final fieldForChecker = field as dynamic;
+      if (_idChecker.annotationsOfExact(fieldForChecker).isNotEmpty) {
+        idName = field.name;
       }
     }
 
@@ -70,9 +73,10 @@ class EntityParser extends Builder {
     // final String? relationPreviewString;
     // final String? relationTargetBoxName;
     for (final field in fields) {
-      if (_transientChecker.annotationsOfExact(field).isNotEmpty) {
+      final fieldForChecker = field as dynamic;
+      if (_transientChecker.annotationsOfExact(fieldForChecker).isNotEmpty) {
         log.info(
-          " Skipping property '${field.name3!}': annotated with @Transient.",
+          " Skipping property '${field.name}': annotated with @Transient.",
         );
         continue;
       }
@@ -85,31 +89,31 @@ class EntityParser extends Builder {
         final runtimeType = type.replaceAll("ToOne<", "").replaceAll(">", "");
         buffer.writeln('''
           InspectableProperty(
-            name: '${field.name3!}',
-            toOneRelation: ToOneRelation<$runtimeType>(rel: entity.${field.name3!}),
+            name: '${field.name}',
+            toOneRelation: ToOneRelation<$runtimeType>(rel: entity.${field.name}),
           ),
         ''');
       } else if (type.contains('ToMany')) {
         final runtimeType = type.replaceAll("ToMany<", "").replaceAll(">", "");
         buffer.writeln('''
           InspectableProperty(
-            name: '${field.name3!}',
+            name: '${field.name}',
             toManyRelation: ToManyRelation<$runtimeType>(
-              rel: entity.${field.name3!},
-              ids: entity.${field.name3!}.map((e) => e.$idName).toList(),
+              rel: entity.${field.name},
+              ids: entity.${field.name}.map((e) => e.$idName).toList(),
             ),
           ),
         ''');
       } else {
         buffer.writeln('''
         InspectableProperty<$type>(
-          name: '${field.name3!}',
-          value: entity.${field.name3!},
+          name: '${field.name}',
+          value: entity.${field.name},
       ''');
-        if (field.name3! != idName && !field.isFinal) {
+        if (field.name != idName && !field.isFinal) {
           buffer.writeln('''
         onChanged: (value) {
-          entity.${field.name3!} = value;
+          entity.${field.name} = value;
           box.put(entity);
         },
       ''');
